@@ -12,210 +12,200 @@ REQUEST BODY:
 {
     "categories" : ["Java"],
     "dateFrom" : "2010-04-27T04:30:45.123Z",
-    "dateTo" : "2023-10-29T22:30:45.123Z"
+    "dateTo" : "2023-10-30T22:30:45.123Z"
 }
     
 RESPONSE BODY:
 [
     {
-        "title": "Mexico ready to retaliate by hurting US farmers",
-        "link": "http://money.cnn.com/2017/02/13/news/economy/mexico-trump-us-corn/index.html?section=money_news_international",
-        "description": "Mexican Senator Armando Rios Piter told CNN that he plans to introduce a bill this week that would stop Mexican purchases of American corn. ",
-        "getPublicationDate": "2017-02-13T21:37:06+04:00",
+        "title": "The man rescuing Britain's 'magical' glow worms",
+        "link": "https://www.bbc.co.uk/news/science-environment-67240450?at_medium=RSS&at_campaign=KARANGA",
+        "description": "Glow worms are a rare sight in the UK but one young conservationist is trying to bring them back.",
+        "getPublicationDate": "2023-10-28T03:52:02+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/news/economy/mexico-trump-us-corn/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/science-environment-67240450"
     },
     {
-        "title": "Will the next iPhone charge wirelessly? ",
-        "link": "http://money.cnn.com/2017/02/13/technology/apple-wireless-charging/index.html?section=money_news_international",
-        "description": "The days of plugging in an iPhone to charge won't last forever.",
-        "getPublicationDate": "2017-02-13T23:42:14+04:00",
+        "title": "Reintroducing wildlife species 'not a priority'",
+        "link": "https://www.bbc.co.uk/news/science-environment-67230751?at_medium=RSS&at_campaign=KARANGA",
+        "description": "Bringing previously extinct native species like beavers back to England is not on the Environment Secretary's priority list.",
+        "getPublicationDate": "2023-10-27T06:59:02+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/technology/apple-wireless-charging/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/science-environment-67230751"
     },
     {
-        "title": "How 'America First' could turn into to 'India First'",
-        "link": "http://money.cnn.com/2017/02/13/technology/india-h1b-visa-trump-nandan-nilekani/index.html?section=money_news_international",
-        "description": "Nandan Nilekani, co-founder of one of India's biggest outsourcing companies, says an H-1B visa crackdown would ultimately hurt the U.S. ",
-        "getPublicationDate": "2017-02-13T23:20:08+04:00",
+        "title": "Bacterium found in African elephants may explain sudden deaths",
+        "link": "https://www.bbc.co.uk/news/science-environment-67197251?at_medium=RSS&at_campaign=KARANGA",
+        "description": "A bacterium found in several wild elephants may explain why hundreds died suddenly in Botswana in 2020.",
+        "getPublicationDate": "2023-10-25T16:04:34+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/technology/india-h1b-visa-trump-nandan-nilekani/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/science-environment-67197251"
     },
     {
-        "title": "Swiss voters reject corporate tax overhaul",
-        "link": "http://money.cnn.com/2017/02/13/pf/taxes/switzerland-tax-referendum-vote/index.html?section=money_news_international",
-        "description": "Read full story for latest details.",
-        "getPublicationDate": "2017-02-13T19:45:35+04:00",
+        "title": "Bull semen: Artificial insemination tanks stolen in County Tyrone",
+        "link": "https://www.bbc.co.uk/news/uk-northern-ireland-67235631?at_medium=RSS&at_campaign=KARANGA",
+        "description": "The size of the tanks stolen is not known but police say their contents were of \"significant value\".",
+        "getPublicationDate": "2023-10-27T12:41:23+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/pf/taxes/switzerland-tax-referendum-vote/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/uk-northern-ireland-67235631"
     },
     {
-        "title": "Stocks hit record again. Is Trump the reason?",
-        "link": "http://money.cnn.com/2017/02/13/investing/stocks-all-time-highs-donald-trump-janet-yellen-fed/index.html?section=money_news_international",
-        "description": "The market is at all-time highs and many say Trump is the reason. But stocks were rallying when investors thought Hillary Clinton would win. Janet Yellen and the Fed may deserve more of the credit for the market's move.",
-        "getPublicationDate": "2017-02-13T21:35:07+04:00",
+        "title": "Regulator reveals water firms with worst finances",
+        "link": "https://www.bbc.co.uk/news/business-67225011?at_medium=RSS&at_campaign=KARANGA",
+        "description": "Thames Water is among firms being closely monitored due to concerns over their performance.",
+        "getPublicationDate": "2023-10-26T20:11:38+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/investing/stocks-all-time-highs-donald-trump-janet-yellen-fed/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/business-67225011"
     },
     {
-        "title": "Apple stock nears record high",
-        "link": "http://money.cnn.com/2017/02/13/technology/apple-stock-record/index.html?section=money_news_international",
-        "description": "Apple stock is less than $1 away from its all-time high amid renewed optimism for the iPhone. ",
-        "getPublicationDate": "2017-02-13T21:24:58+04:00",
+        "title": "Big banks linked to products with pangolin and leopard parts",
+        "link": "https://www.bbc.co.uk/news/business-67191069?at_medium=RSS&at_campaign=KARANGA",
+        "description": "The companies include UK multinationals such as HSBC, Prudential, and Legal & General.",
+        "getPublicationDate": "2023-10-25T03:29:05+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/technology/apple-stock-record/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/business-67191069"
     },
     {
-        "title": "America's NAFTA nemesis: Canada, not Mexico",
-        "link": "http://money.cnn.com/2017/02/13/news/economy/nafta-canada-trudeau-trump-mexico/index.html?section=money_news_international",
-        "description": "President-elect Donald Trump focuses his criticism of NAFTA on Mexico. But Canada and America have a rocky trade history too.",
-        "getPublicationDate": "2017-02-13T20:59:43+04:00",
+        "title": "World shift to clean energy is unstoppable, IEA report says",
+        "link": "https://www.bbc.co.uk/news/science-environment-67198206?at_medium=RSS&at_campaign=KARANGA",
+        "description": "The world is shifting rapidly to clean energy but still investing too much in fossil fuels, the IEA says.",
+        "getPublicationDate": "2023-10-24T08:00:32+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/news/economy/nafta-canada-trudeau-trump-mexico/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/science-environment-67198206"
     },
     {
-        "title": "Verizon's plan: Consumers win, investors lose",
-        "link": "http://money.cnn.com/2017/02/13/investing/verizon-stock-unlimited-data-plan/index.html?section=money_news_international",
-        "description": "Verizon has decided to bring back unlimited data plans. But while that's great for its subscribers, it's awful news for investors. It's another sign of how brutally competitive the telecom business is. And it's hurting Verizon's stock.",
-        "getPublicationDate": "2017-02-13T20:32:13+04:00",
+        "title": "Skeletons discovered in rare 5,000-year-old tomb in Orkney",
+        "link": "https://www.bbc.co.uk/news/uk-scotland-north-east-orkney-shetland-67195563?at_medium=RSS&at_campaign=KARANGA",
+        "description": "Archaeologists say pottery and stone tools have also been found at the site in Orkney.",
+        "getPublicationDate": "2023-10-24T21:46:57+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/investing/verizon-stock-unlimited-data-plan/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/uk-scotland-north-east-orkney-shetland-67195563"
     },
     {
-        "title": "Oil prices have doubled in a year. Here's why",
-        "link": "http://money.cnn.com/2017/02/13/investing/oil-prices-opec-deal/index.html?section=money_news_international",
-        "description": "The price of crude oil has more than doubled over the past year after bottoming out at $26 per barrel in February 2016. ",
-        "getPublicationDate": "2017-02-13T18:39:58+04:00",
+        "title": "Sea-level rise: West Antarctic ice shelf melt 'unavoidable'",
+        "link": "https://www.bbc.co.uk/news/science-environment-67171231?at_medium=RSS&at_campaign=KARANGA",
+        "description": "Future sea-level rise may have been underestimated, a new study warns, with more melt \"locked in\".",
+        "getPublicationDate": "2023-10-23T19:00:08+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/investing/oil-prices-opec-deal/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/science-environment-67171231"
     },
     {
-        "title": "Tesla will sell electric cars in the Middle East",
-        "link": "http://money.cnn.com/2017/02/13/investing/tesla-uae-elon-musk/index.html?section=money_news_international",
-        "description": "The automaker announced Monday that its first official venture in the oil-rich Middle East will be in the United Arab Emirates. ",
-        "getPublicationDate": "2017-02-13T20:18:47+04:00",
+        "title": "Could the UK's tides help wean us off fossil fuels?",
+        "link": "https://www.bbc.co.uk/news/science-environment-67170625?at_medium=RSS&at_campaign=KARANGA",
+        "description": "The UK has some of the world's most powerful tides - and is well placed to exploit their power.",
+        "getPublicationDate": "2023-10-22T03:43:12+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/investing/tesla-uae-elon-musk/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/science-environment-67170625"
     },
     {
-        "title": "Indian rival slams Uber's business model",
-        "link": "http://money.cnn.com/2017/02/13/technology/uber-ola-india-pranay-jivrajka/index.html?section=money_news_international",
-        "description": "Uber's top rival in India has some unsolicited advice for the U.S. startup: Go local.",
-        "getPublicationDate": "2017-02-13T17:48:42+04:00",
+        "title": "What is COP28 in Dubai and why is it important?",
+        "link": "https://www.bbc.co.uk/news/science-environment-67143989?at_medium=RSS&at_campaign=KARANGA",
+        "description": "The climate change summit comes after a year of weather extremes and broken temperature records.",
+        "getPublicationDate": "2023-10-25T14:56:08+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/technology/uber-ola-india-pranay-jivrajka/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/science-environment-67143989"
     },
     {
-        "title": "Cook calls for campaign against fake news",
-        "link": "http://money.cnn.com/2017/02/11/media/fake-news-apple-ceo-tim-cook/index.html?section=money_news_international",
-        "description": "Apple CEO Tim Cook wants the tech industry to take action against \"fake news\" stories that are polluting the web.",
-        "getPublicationDate": "2017-02-12T23:50:17+04:00",
+        "title": "Climate Change Committee says UK no longer a world leader",
+        "link": "https://www.bbc.co.uk/news/science-environment-66032607?at_medium=RSS&at_campaign=KARANGA",
+        "description": "The UK's statutory climate body criticises the government for backing new oil and gas projects.",
+        "getPublicationDate": "2023-06-28T03:01:50+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/11/media/fake-news-apple-ceo-tim-cook/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/science-environment-66032607"
     },
     {
-        "title": "Trump brand takes another hit",
-        "link": "http://money.cnn.com/2017/02/12/news/companies/trump-brand-sears-kmart/index.html?section=money_news_international",
-        "description": "Sears Holdings, the company that owns retail stores Sears and Kmart, said this weekend that it would remove 31 Trump-branded items from its website. ",
-        "getPublicationDate": "2017-02-13T20:07:44+04:00",
+        "title": "Africa proposes global carbon taxes to fight climate change",
+        "link": "https://www.bbc.co.uk/news/world-africa-66733557?at_medium=RSS&at_campaign=KARANGA",
+        "description": "Despite suffering some of the worst impacts of climate change, the continent only gets 12% of financing.",
+        "getPublicationDate": "2023-09-07T11:39:58+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/12/news/companies/trump-brand-sears-kmart/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/world-africa-66733557"
     },
     {
-        "title": "Cutting down trash with bamboo packaging ",
-        "link": "http://money.cnn.com/2017/02/12/news/thailand-bamboo-cassava-packaging-universal-biopack/index.html?section=money_news_international",
-        "description": "Universal Biopack makes packaging that it sells to restaurants and manufacturers. But rather than plastic, it uses a mixture of bamboo and cassava.",
-        "getPublicationDate": "2017-02-13T06:14:26+04:00",
+        "title": "Ocean heat record broken, with grim implications for the planet",
+        "link": "https://www.bbc.co.uk/news/science-environment-66387537?at_medium=RSS&at_campaign=KARANGA",
+        "description": "The oceans are a vital regulator for the climate and our weather but are rapidly heating up.",
+        "getPublicationDate": "2023-08-04T08:00:03+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/12/news/thailand-bamboo-cassava-packaging-universal-biopack/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/science-environment-66387537"
     },
     {
-        "title": "Nike stars champion 'Equality' in new ad",
-        "link": "http://money.cnn.com/2017/02/12/news/companies/nike-equality-lebron-serena/index.html?section=money_news_international",
-        "description": "Nike on Sunday launched a star-studded short film titled \"Equality\" that coincides with Black History Month.",
-        "getPublicationDate": "2017-02-12T23:49:31+04:00",
+        "title": "Will the Gulf Stream really collapse by 2025?",
+        "link": "https://www.bbc.co.uk/news/science-environment-66289494?at_medium=RSS&at_campaign=KARANGA",
+        "description": "A new paper says its collapse could be imminent, but some experts argue science is not established.",
+        "getPublicationDate": "2023-07-26T18:13:07+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/12/news/companies/nike-equality-lebron-serena/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/science-environment-66289494"
     },
     {
-        "title": "'Lego Batman' producer, then Treasury sec?",
-        "link": "http://money.cnn.com/2017/02/12/media/lego-batman-movie-steven-mnuchin/index.html?section=money_news_international",
-        "description": "Treasury secretary pick Steven Mnuchin is an executive producer on Warner Bros.' \"The Lego Batman Movie,\" which pulled in an estimated $55.6 million from U.S. audiences during its opening weekend.",
-        "getPublicationDate": "2017-02-13T02:57:47+04:00",
+        "title": "What is net zero and how are the UK and other countries doing?",
+        "link": "https://www.bbc.co.uk/news/science-environment-58874518?at_medium=RSS&at_campaign=KARANGA",
+        "description": "The UK may weaken some key green commitments, despite its pledge to reach \"net zero\" by 2050.",
+        "getPublicationDate": "2023-09-21T01:15:05+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/12/media/lego-batman-movie-steven-mnuchin/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/science-environment-58874518"
     },
     {
-        "title": "Are we heading for another Greek debt crisis?",
-        "link": "http://money.cnn.com/2017/02/08/news/economy/greece-imf-bailout-eurozone/index.html?section=money_news_international",
-        "description": "It may seem like a recurring nightmare, but Greece is in danger of running out of money again. ",
-        "getPublicationDate": "2017-02-09T14:54:49+04:00",
+        "title": "US issues first ever fine for space junk to Dish Network",
+        "link": "https://www.bbc.co.uk/news/technology-66993647?at_medium=RSS&at_campaign=KARANGA",
+        "description": "Dish Network will have to pay $150,000 for failing to move an old satellite far enough away from the Earth.",
+        "getPublicationDate": "2023-10-03T20:25:37+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/08/news/economy/greece-imf-bailout-eurozone/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/technology-66993647"
     },
     {
-        "title": "Verizon is bringing back unlimited data",
-        "link": "http://money.cnn.com/2017/02/12/technology/verizon-unlimited-data-plan/index.html?section=money_news_international",
-        "description": "Read full story for latest details.",
-        "getPublicationDate": "2017-02-13T17:20:28+04:00",
+        "title": "James Webb telescope makes 'JuMBO' discovery of planet-like objects in Orion",
+        "link": "https://www.bbc.co.uk/news/science-environment-66974738?at_medium=RSS&at_campaign=KARANGA",
+        "description": "The new space observatory sees pairs of Jupiter-sized objects floating free between the stars.",
+        "getPublicationDate": "2023-10-02T13:59:57+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/12/technology/verizon-unlimited-data-plan/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/science-environment-66974738"
     },
     {
-        "title": "Visa crackdown puts these rural doctors at risk ",
-        "link": "http://money.cnn.com/2017/02/10/news/economy/visa-ban-rural-doctor-shortage/index.html?section=money_news_international",
-        "description": "Read full story for latest details.",
-        "getPublicationDate": "2017-02-11T05:02:55+04:00",
+        "title": "Osiris-Rex: Nasa confirms return of asteroid Bennu samples",
+        "link": "https://www.bbc.co.uk/news/science-environment-66893661?at_medium=RSS&at_campaign=KARANGA",
+        "description": "A capsule carrying debris from asteroid Bennu lands safely in the Utah desert.",
+        "getPublicationDate": "2023-09-25T06:27:12+04:00",
         "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "thumbnails": "",
         "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/10/news/economy/visa-ban-rural-doctor-shortage/index.html?section=money_news_international"
-    },
-    {
-        "title": "Trump isn't killing the bull market. Here's why",
-        "link": "http://money.cnn.com/2017/02/10/investing/stocks-united-states-trump-europe-china-japan/index.html?section=money_news_international",
-        "description": "Read full story for latest details.",
-        "getPublicationDate": "2017-02-10T20:55:17+04:00",
-        "author": "",
-        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
-        "categories": [],
-        "relatedIdentifiers": "http://money.cnn.com/2017/02/10/investing/stocks-united-states-trump-europe-china-japan/index.html?section=money_news_international"
+        "relatedIdentifiers": "https://www.bbc.co.uk/news/science-environment-66893661"
     }
 ]
 ```

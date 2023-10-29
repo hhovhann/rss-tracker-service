@@ -4,7 +4,6 @@ import com.hhovhann.rsstrackerservice.dto.ResponseFeedDto;
 import com.hhovhann.rsstrackerservice.entity.RssFeed;
 import com.rometools.rome.feed.synd.SyndCategory;
 import com.rometools.rome.feed.synd.SyndEntry;
-import com.rometools.rome.feed.synd.SyndFeed;
 import org.springframework.stereotype.Component;
 
 import java.time.ZoneId;

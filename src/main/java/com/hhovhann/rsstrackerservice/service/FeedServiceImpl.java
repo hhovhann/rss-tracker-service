@@ -43,8 +43,8 @@ public class FeedServiceImpl implements FeedService {
     public List<ResponseFeedDto> searchFeedsByCategoriesAndDateRange(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo) {
         log.debug("searchFeedsByCategoriesAndDateRange,  categories: {}, dateFrom: {}, dateTo: {}", categories, dateFrom, dateTo);
 
-        var feeds = feedRepository.findAllByIsEnabledAndPublicationDateBetween(true, dateFrom, dateTo);
-//        var feeds = feedRepository.findAllByCategoriesIsInAndIsEnabledAndPublicationDateBetween(categories, true, dateFrom, dateTo); TODO ENABLED AFTER CLARIFYING THE CATEGORIES PART
+        var feeds = feedRepository.findAllByPublicationDateBetween(dateFrom, dateTo); // TODO now only filtering by feed date ranges
+//        var feeds = feedRepository.findAllByCategoriesIsInAndPublicationDateBetween(categories, dateFrom, dateTo); TODO ENABLED AFTER CLARIFYING THE CATEGORIES PART
 
         return feeds.stream().map(feedMapper::toResponseDto).toList();
     }
