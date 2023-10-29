@@ -9,8 +9,13 @@ import java.util.List;
 
 @Repository
 public interface FeedRepository extends JpaRepository<RssFeed, Long> {
-    List<RssFeed> findAllByPublicationDateBetween(ZonedDateTime dateFrom, ZonedDateTime dateTo);
-    List<RssFeed> findAllByCategoriesIsInAndPublicationDateBetween(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo);
+    List<RssFeed> findAllByIsEnabledAndPublicationDateBetween(Boolean isEnabled, ZonedDateTime dateFrom, ZonedDateTime dateTo);
+
+    List<RssFeed> findAllByCategoriesIsInAndIsEnabledAndPublicationDateBetween(List<String> categories,
+                                                                               Boolean isEnabled,
+                                                                               ZonedDateTime dateFrom,
+                                                                               ZonedDateTime dateTo);
+
     List<RssFeed> findAllByIsEnabledOrderByCategoriesAscPublicationDateAsc(Boolean isEnabled);
 
 }

@@ -12,7 +12,6 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
-import java.util.Collections;
 import java.util.List;
 
 @Slf4j
@@ -62,8 +61,8 @@ public class FeedServiceImpl implements FeedService {
     public List<ResponseFeedDto> getFeedsByDateRangeAndCategory(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo) {
         log.debug("getFeedsByDateRangeAndCategory, dateFrom: {}, dateTo: {}, categories: {}", dateFrom, dateTo, categories);
 
-        var feeds = feedRepository.findAllByPublicationDateBetween(dateFrom, dateTo);
-        var feeds1 = feedRepository.findAllByCategoriesIsInAndPublicationDateBetween(categories, dateFrom, dateTo);
+        var feeds = feedRepository.findAllByIsEnabledAndPublicationDateBetween(true, dateFrom, dateTo);
+        var feeds1 = feedRepository.findAllByCategoriesIsInAndIsEnabledAndPublicationDateBetween(categories, true, dateFrom, dateTo);
         // TODO map all feeds results to dto object and back to front end
         return feeds.stream().map(feedMapper::toDTO).toList();
     }
