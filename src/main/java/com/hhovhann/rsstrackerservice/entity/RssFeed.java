@@ -1,6 +1,7 @@
 package com.hhovhann.rsstrackerservice.entity;
 
-import com.hhovhann.rsstrackerservice.enumes.Category;
+import com.hhovhann.rsstrackerservice.enumes.FeedCategory;
+import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -8,8 +9,11 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
+import jdk.jfr.Category;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.ZonedDateTime;
@@ -19,19 +23,22 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class Feed {
+@NoArgsConstructor
+public class RssFeed {
     @Id
     @GeneratedValue
     private Long id;
     String title;
     String link;
+    @Lob
+    @Column(name = "CONTENT", length = 512)
     String description;
     ZonedDateTime publicationDate;
-    @Embedded
-    Author author;
-    String thumbnails; // link to thumbnails url
+    String author;
+    String thumbnails; // link to thumbnails url: in Channel it's Image with size url etc ....
     @Enumerated(EnumType.STRING)
-    Category category;
+    FeedCategory feedCategory;
     @ElementCollection
-    List<Long> relatedIdentifiers; // <id>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a</id>
+    List<String> categories;
+    String relatedIdentifiers;
 }

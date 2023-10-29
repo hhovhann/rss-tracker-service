@@ -1,14 +1,15 @@
 package com.hhovhann.rsstrackerservice.repository;
 
-import com.hhovhann.rsstrackerservice.entity.Feed;
-import com.hhovhann.rsstrackerservice.enumes.Category;
+import com.hhovhann.rsstrackerservice.entity.RssFeed;
+import com.hhovhann.rsstrackerservice.enumes.FeedCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.ListCrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.time.ZonedDateTime;
 import java.util.List;
 
-public interface FeedRepository extends ListCrudRepository<Long, Feed>, JpaRepository<Long, Feed> {
-    List<Feed> findAllByCategoryAndPublicationTimeBetween(ZonedDateTime dateFrom, ZonedDateTime dateTo, Category category);
+@Repository
+public interface FeedRepository extends JpaRepository<RssFeed, Long> {
+    List<RssFeed> findAllByFeedCategoryAndPublicationDateBetween( FeedCategory feedCategory, ZonedDateTime dateFrom, ZonedDateTime dateTo);
 
 }
