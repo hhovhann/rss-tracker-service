@@ -130,5 +130,7 @@ RESPONSE BODY:
 2. Entities relational or simple structure
 3. Rest APi endpoints 
 4. Estimations
-5. ETC....
-   https://en.wikipedia.org/wiki/RSS
+5. Unclear requirements: Configuration table may have an arbitrary number of feeds for ingestion. Note that there are maybe several feeds as per site/domain. We should be able to disable ingestion of a particular feed without removing it from the config table.
+   
+#References
+[RSS](https://en.wikipedia.org/wiki/RSS)
