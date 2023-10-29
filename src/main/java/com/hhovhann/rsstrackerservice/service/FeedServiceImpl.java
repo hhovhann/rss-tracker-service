@@ -58,12 +58,12 @@ public class FeedServiceImpl implements FeedService {
     }
 
     @Override
-    public List<ResponseFeedDto> getFeedsByDateRangeAndCategory(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo) {
-        log.debug("getFeedsByDateRangeAndCategory, dateFrom: {}, dateTo: {}, categories: {}", dateFrom, dateTo, categories);
+    public List<ResponseFeedDto> getFeedsByCategoriesAndDateRange(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo) {
+        log.debug("getFeedsByCategoriesAndDateRange, dateFrom: {}, dateTo: {}, categories: {}", dateFrom, dateTo, categories);
 
         var feeds = feedRepository.findAllByIsEnabledAndPublicationDateBetween(true, dateFrom, dateTo);
-        var feeds1 = feedRepository.findAllByCategoriesIsInAndIsEnabledAndPublicationDateBetween(categories, true, dateFrom, dateTo);
-        // TODO map all feeds results to dto object and back to front end
+//        var feeds = feedRepository.findAllByCategoriesIsInAndIsEnabledAndPublicationDateBetween(categories, true, dateFrom, dateTo); TODO ENABLED AFTER CLARIFYING THE CATEGORIES PART
+
         return feeds.stream().map(feedMapper::toDTO).toList();
     }
 }

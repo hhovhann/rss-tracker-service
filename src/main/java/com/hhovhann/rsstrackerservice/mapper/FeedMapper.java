@@ -22,6 +22,14 @@ public class FeedMapper {
     public ResponseFeedDto toDTO(RssFeed updatedEntity) {
         // TODO here should be mapping business logic or can use mapstruct separate library
 
-        return new ResponseFeedDto(updatedEntity.getTitle(),updatedEntity.getLink(), updatedEntity.getDescription());
+        return new ResponseFeedDto(
+                updatedEntity.getTitle(),
+                updatedEntity.getLink(),
+                updatedEntity.getDescription(),
+                updatedEntity.getPublicationDate(),
+                updatedEntity.getAuthor(),
+                updatedEntity.getThumbnails(),
+                updatedEntity.getCategories(),
+                updatedEntity.getRelatedIdentifiers());
     }
 }

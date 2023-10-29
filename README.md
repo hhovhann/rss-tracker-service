@@ -9,118 +9,213 @@ RSS/Atom feeds update tracker Rest API service project for Spring Boot
 POST http://localhost:8080/feeds/search
 
 REQUEST BODY:
-    {
-      "categories" : ["Java"],
-      "dateFrom" : "2020-04-27T04:30:45.123Z",
-      "dateTo" : "2023-10-27T22:30:45.123Z"
-    }
+{
+    "categories" : ["Java"],
+    "dateFrom" : "2010-04-27T04:30:45.123Z",
+    "dateTo" : "2023-10-29T22:30:45.123Z"
+}
     
 RESPONSE BODY:
 [
     {
-        "title": "Bankman-Fried says he worried his company's management team 'might not be great'",
-        "link": "https://www.cnn.com/business/live-news/sbf-testimony-before-jurors-ftx-fraud-trial/index.html",
-        "description": "Sam Bankman-Fried took the witness stand Friday for the first time in front of jurors in his criminal fraud trial. Bankman-Fried, 31, has pleaded not guilty to seven counts of federal fraud and conspiracy."
+        "title": "Mexico ready to retaliate by hurting US farmers",
+        "link": "http://money.cnn.com/2017/02/13/news/economy/mexico-trump-us-corn/index.html?section=money_news_international",
+        "description": "Mexican Senator Armando Rios Piter told CNN that he plans to introduce a bill this week that would stop Mexican purchases of American corn. ",
+        "getPublicationDate": "2017-02-13T21:37:06+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/news/economy/mexico-trump-us-corn/index.html?section=money_news_international"
     },
     {
-        "title": "At age 13, he was an avid volunteer who wanted to be a pastor and an engineer. A stranger's bullets destroyed those dreams",
-        "link": "https://www.cnn.com/2023/10/27/us/deshon-dubose-us-gun-deaths-gdpr/index.html",
-        "description": "The dust on Charles DuBose's motorcycle belies his meticulous care of his prized Harley Davidson. But he refuses to disturb the handprints pressed in the dust. They belong to his grandson Deshon, who loved riding on the back seat and couldn't wait until he was old enough to drive."
+        "title": "Will the next iPhone charge wirelessly? ",
+        "link": "http://money.cnn.com/2017/02/13/technology/apple-wireless-charging/index.html?section=money_news_international",
+        "description": "The days of plugging in an iPhone to charge won't last forever.",
+        "getPublicationDate": "2017-02-13T23:42:14+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/technology/apple-wireless-charging/index.html?section=money_news_international"
     },
     {
-        "title": "Sam Bankman-Fried takes the stand in his fraud trial",
-        "link": "https://www.cnn.com/business/live-news/ftx-sam-bankman-fried-testimony-fraud-trial/index.html",
-        "description": "Lawyers for 31-year-old former billionaire and FTX founder Sam Bankman-Fried started to present their case Thursday in federal court in Manhattan."
+        "title": "How 'America First' could turn into to 'India First'",
+        "link": "http://money.cnn.com/2017/02/13/technology/india-h1b-visa-trump-nandan-nilekani/index.html?section=money_news_international",
+        "description": "Nandan Nilekani, co-founder of one of India's biggest outsourcing companies, says an H-1B visa crackdown would ultimately hurt the U.S. ",
+        "getPublicationDate": "2017-02-13T23:20:08+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/technology/india-h1b-visa-trump-nandan-nilekani/index.html?section=money_news_international"
     },
     {
-        "title": "GM self-driving car subsidiary withheld video of a crash, California DMV says",
-        "link": "https://www.cnn.com/2023/10/24/business/california-dmv-cruise-permit-revoke/index.html",
-        "description": "The California Department of Motor Vehicles Tuesday revoked Cruise's permits to test and operate fully driverless vehicles on the state's roads. The California DMV said, in part, it was because Cruise, which is GM's self-driving vehicle technology subsidiary, withheld video and information about a crash involving a pedestrian."
+        "title": "Swiss voters reject corporate tax overhaul",
+        "link": "http://money.cnn.com/2017/02/13/pf/taxes/switzerland-tax-referendum-vote/index.html?section=money_news_international",
+        "description": "Read full story for latest details.",
+        "getPublicationDate": "2017-02-13T19:45:35+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/pf/taxes/switzerland-tax-referendum-vote/index.html?section=money_news_international"
     },
     {
-        "title": "The three-year cruise is running late -- again",
-        "link": "https://www.cnn.com/travel/article/three-year-cruise-latest-update/index.html",
-        "description": "Life at Sea's three-year cruise is still struggling to get afloat, with a new departure date rumored to be November 30. Passengers have been told not to book travel until they receive further updates."
+        "title": "Stocks hit record again. Is Trump the reason?",
+        "link": "http://money.cnn.com/2017/02/13/investing/stocks-all-time-highs-donald-trump-janet-yellen-fed/index.html?section=money_news_international",
+        "description": "The market is at all-time highs and many say Trump is the reason. But stocks were rallying when investors thought Hillary Clinton would win. Janet Yellen and the Fed may deserve more of the credit for the market's move.",
+        "getPublicationDate": "2017-02-13T21:35:07+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/investing/stocks-all-time-highs-donald-trump-janet-yellen-fed/index.html?section=money_news_international"
     },
     {
-        "title": "October 26, 2023 Israel-Hamas war news",
-        "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-news-10-26-23/index.html",
-        "description": "Israel's military said it carried out a \"targeted raid\" overnight in northern Gaza using tanks. The move came hours after Benjamin Netanyahu said Israel was preparing for a ground operation following the deadly October 7 Hamas attacks. Follow here for live news updates."
+        "title": "Apple stock nears record high",
+        "link": "http://money.cnn.com/2017/02/13/technology/apple-stock-record/index.html?section=money_news_international",
+        "description": "Apple stock is less than $1 away from its all-time high amid renewed optimism for the iPhone. ",
+        "getPublicationDate": "2017-02-13T21:24:58+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/technology/apple-stock-record/index.html?section=money_news_international"
     },
     {
-        "title": "October 25, 2023 - Lewiston, Maine mass shootings",
-        "link": "https://www.cnn.com/us/live-news/lewiston-maine-shootings-active-shooter-10-25-23/index.html",
-        "description": "A manhunt is underway after a shooting rampage occurred in Lewiston, Maine, on Wednesday night, according to multiple law enforcement sources. Follow here for live news updates."
+        "title": "America's NAFTA nemesis: Canada, not Mexico",
+        "link": "http://money.cnn.com/2017/02/13/news/economy/nafta-canada-trudeau-trump-mexico/index.html?section=money_news_international",
+        "description": "President-elect Donald Trump focuses his criticism of NAFTA on Mexico. But Canada and America have a rocky trade history too.",
+        "getPublicationDate": "2017-02-13T20:59:43+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/news/economy/nafta-canada-trudeau-trump-mexico/index.html?section=money_news_international"
     },
     {
-        "title": "Today's news in 10 minutes",
-        "link": "https://www.cnn.com/2023/10/26/cnn10/ten-content-fri/index.html",
-        "description": "October 27, 2023"
+        "title": "Verizon's plan: Consumers win, investors lose",
+        "link": "http://money.cnn.com/2017/02/13/investing/verizon-stock-unlimited-data-plan/index.html?section=money_news_international",
+        "description": "Verizon has decided to bring back unlimited data plans. But while that's great for its subscribers, it's awful news for investors. It's another sign of how brutally competitive the telecom business is. And it's hurting Verizon's stock.",
+        "getPublicationDate": "2017-02-13T20:32:13+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/investing/verizon-stock-unlimited-data-plan/index.html?section=money_news_international"
     },
     {
-        "title": "Redistricting fights in these 10 states could determine which party controls the US House",
-        "link": "https://www.cnn.com/2023/10/22/politics/redistricting-states-maps-house-control/index.html",
-        "description": "Around the country, politicians are waging high-stakes battles over new congressional lines that could influence which party controls the US House of Representatives after the 2024 election."
+        "title": "Oil prices have doubled in a year. Here's why",
+        "link": "http://money.cnn.com/2017/02/13/investing/oil-prices-opec-deal/index.html?section=money_news_international",
+        "description": "The price of crude oil has more than doubled over the past year after bottoming out at $26 per barrel in February 2016. ",
+        "getPublicationDate": "2017-02-13T18:39:58+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/investing/oil-prices-opec-deal/index.html?section=money_news_international"
     },
     {
-        "title": "Britney Spears Fast Facts",
-        "link": "https://www.cnn.com/2013/06/27/us/britney-spears-fast-facts/index.html",
-        "description": "Read CNN's Britney Spears Fast Facts to learn about the pop singer and Grammy award winner."
+        "title": "Tesla will sell electric cars in the Middle East",
+        "link": "http://money.cnn.com/2017/02/13/investing/tesla-uae-elon-musk/index.html?section=money_news_international",
+        "description": "The automaker announced Monday that its first official venture in the oil-rich Middle East will be in the United Arab Emirates. ",
+        "getPublicationDate": "2017-02-13T20:18:47+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/investing/tesla-uae-elon-musk/index.html?section=money_news_international"
     },
     {
-        "title": "David Petraeus Fast Facts",
-        "link": "https://www.cnn.com/2013/03/01/us/david-petraeus-fast-facts/index.html",
-        "description": "Read CNN's Fast Facts for a look at the life of David Petraeus, former director of the Central Intelligence Agency (CIA)."
+        "title": "Indian rival slams Uber's business model",
+        "link": "http://money.cnn.com/2017/02/13/technology/uber-ola-india-pranay-jivrajka/index.html?section=money_news_international",
+        "description": "Uber's top rival in India has some unsolicited advice for the U.S. startup: Go local.",
+        "getPublicationDate": "2017-02-13T17:48:42+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/13/technology/uber-ola-india-pranay-jivrajka/index.html?section=money_news_international"
     },
     {
-        "title": "Bob Graham Fast Facts",
-        "link": "https://www.cnn.com/2013/08/20/us/bob-graham-fast-facts/index.html",
-        "description": "Read CNN's Fast Facts about Bob Graham, former United States senator and Democratic governor of Florida."
+        "title": "Cook calls for campaign against fake news",
+        "link": "http://money.cnn.com/2017/02/11/media/fake-news-apple-ceo-tim-cook/index.html?section=money_news_international",
+        "description": "Apple CEO Tim Cook wants the tech industry to take action against \"fake news\" stories that are polluting the web.",
+        "getPublicationDate": "2017-02-12T23:50:17+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/11/media/fake-news-apple-ceo-tim-cook/index.html?section=money_news_international"
     },
     {
-        "title": "Here's what we know about the suspect in the Maine mass shooting",
-        "link": "https://www.cnn.com/2023/10/26/us/maine-shooting-suspect-invs/index.html",
-        "description": "The suspect in the Maine mass shooting started making statements about hearing voices and wanting to hurt fellow soldiers while serving at a military base this summer, and spent a few weeks in a hospital, law enforcement officials told CNN."
+        "title": "Trump brand takes another hit",
+        "link": "http://money.cnn.com/2017/02/12/news/companies/trump-brand-sears-kmart/index.html?section=money_news_international",
+        "description": "Sears Holdings, the company that owns retail stores Sears and Kmart, said this weekend that it would remove 31 Trump-branded items from its website. ",
+        "getPublicationDate": "2017-02-13T20:07:44+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/12/news/companies/trump-brand-sears-kmart/index.html?section=money_news_international"
     },
     {
-        "title": "Jonathan Majors' accuser arrested in New York, won't be prosecuted",
-        "link": "https://www.cnn.com/2023/10/26/entertainment/jonathan-majors-accuser-incident-new-york-grace-jabbari-arrested/index.html",
-        "description": "The woman who accused actor Jonathan Majors of assaulting her during a dispute in March was arrested Wednesday night on suspicion of assault and criminal mischief related to the same incident, according to a source with knowledge of the matter."
+        "title": "Cutting down trash with bamboo packaging ",
+        "link": "http://money.cnn.com/2017/02/12/news/thailand-bamboo-cassava-packaging-universal-biopack/index.html?section=money_news_international",
+        "description": "Universal Biopack makes packaging that it sells to restaurants and manufacturers. But rather than plastic, it uses a mixture of bamboo and cassava.",
+        "getPublicationDate": "2017-02-13T06:14:26+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/12/news/thailand-bamboo-cassava-packaging-universal-biopack/index.html?section=money_news_international"
     },
     {
-        "title": "The New York Times walks back flawed Gaza hospital coverage, but other media outlets remain silent",
-        "link": "https://www.cnn.com/2023/10/24/media/gaza-hospital-coverage-walk-back/index.html",
-        "description": "Most news organizations seem eager to sweep last week's negligent coverage of the Gaza hospital explosion under the rug, moving on from the low moment covering the Israel-Hamas war without admitting any mistakes."
+        "title": "Nike stars champion 'Equality' in new ad",
+        "link": "http://money.cnn.com/2017/02/12/news/companies/nike-equality-lebron-serena/index.html?section=money_news_international",
+        "description": "Nike on Sunday launched a star-studded short film titled \"Equality\" that coincides with Black History Month.",
+        "getPublicationDate": "2017-02-12T23:49:31+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/12/news/companies/nike-equality-lebron-serena/index.html?section=money_news_international"
     },
     {
-        "title": "How US gun culture stacks up with the world",
-        "link": "https://www.cnn.com/2021/11/26/world/us-gun-culture-world-comparison-intl-cmd/index.html",
-        "description": "Ubiquitous gun violence in the US has left few places unscathed over the decades. As the tally of gun-related deaths continue to grow daily, here's a look at how American gun culture compares to the rest of the world."
+        "title": "'Lego Batman' producer, then Treasury sec?",
+        "link": "http://money.cnn.com/2017/02/12/media/lego-batman-movie-steven-mnuchin/index.html?section=money_news_international",
+        "description": "Treasury secretary pick Steven Mnuchin is an executive producer on Warner Bros.' \"The Lego Batman Movie,\" which pulled in an estimated $55.6 million from U.S. audiences during its opening weekend.",
+        "getPublicationDate": "2017-02-13T02:57:47+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/12/media/lego-batman-movie-steven-mnuchin/index.html?section=money_news_international"
     },
     {
-        "title": "Visualizing how mass shootings in 2023 compare to the last decade",
-        "link": "https://www.cnn.com/2023/01/24/us/how-many-mass-shootings-2023-dg-xpn/index.html",
-        "description": "There have been more mass shootings than days so far this year. Here's how 2023 compares to the past decade."
+        "title": "Are we heading for another Greek debt crisis?",
+        "link": "http://money.cnn.com/2017/02/08/news/economy/greece-imf-bailout-eurozone/index.html?section=money_news_international",
+        "description": "It may seem like a recurring nightmare, but Greece is in danger of running out of money again. ",
+        "getPublicationDate": "2017-02-09T14:54:49+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/08/news/economy/greece-imf-bailout-eurozone/index.html?section=money_news_international"
     },
     {
-        "title": "'Harry Potter' and 'Downton Abbey' star Maggie Smith, 88, is the face of Loewe's new campaign",
-        "link": "https://www.cnn.com/style/article/maggie-smith-loewe-fashion-campaign-intl-scli/index.html",
-        "description": "Dame Maggie Smith, the British actress acclaimed for her appearances both on stage and in cinema, has taken on a new role —  and this time it's in the world of luxury fashion."
+        "title": "Verizon is bringing back unlimited data",
+        "link": "http://money.cnn.com/2017/02/12/technology/verizon-unlimited-data-plan/index.html?section=money_news_international",
+        "description": "Read full story for latest details.",
+        "getPublicationDate": "2017-02-13T17:20:28+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/12/technology/verizon-unlimited-data-plan/index.html?section=money_news_international"
     },
     {
-        "title": "This middle-schooler 'knew how to be a best friend to everybody.' Then gunfire erupted while she was out to buy milk",
-        "link": "https://www.cnn.com/2023/10/26/us/brexialee-torres-ortiz-us-gun-deaths-gdpr/index.html",
-        "description": "It's been almost nine months since Brexi Torres-Ortiz and her mom sang together -- hitting every note, feeling every emotion with every word of a gospel tune that happened to be the 11-year-old's favorite song."
+        "title": "Visa crackdown puts these rural doctors at risk ",
+        "link": "http://money.cnn.com/2017/02/10/news/economy/visa-ban-rural-doctor-shortage/index.html?section=money_news_international",
+        "description": "Read full story for latest details.",
+        "getPublicationDate": "2017-02-11T05:02:55+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/10/news/economy/visa-ban-rural-doctor-shortage/index.html?section=money_news_international"
     },
     {
-        "title": "UN says fuel shortages will halt Gaza aid operations within a day",
-        "link": "https://www.cnn.com/2023/10/25/middleeast/israel-hamas-gaza-war-wednesday-intl-hnk/index.html",
-        "description": "The main United Nations agency in Gaza says it will have to halt aid operations within a day if fuel is not delivered, in what the organization says would mark the end of a \"lifeline\" for civilians."
-    },
-    {
-        "title": "October 25, 2023 Israel-Hamas war news",
-        "link": "https://www.cnn.com/middleeast/live-news/israel-hamas-war-gaza-palestine-10-25-23/index.html",
-        "description": "The main UN agency working in Gaza said it will be forced to halt its operations later Wednesday due to a lack of fuel, exacerbating a grave humanitarian crisis. Follow here for live news updates."
+        "title": "Trump isn't killing the bull market. Here's why",
+        "link": "http://money.cnn.com/2017/02/10/investing/stocks-united-states-trump-europe-china-japan/index.html?section=money_news_international",
+        "description": "Read full story for latest details.",
+        "getPublicationDate": "2017-02-10T20:55:17+04:00",
+        "author": "",
+        "thumbnails": "http://i.cnn.net/money/images/cnnmoney_logo_144x30.gif",
+        "categories": [],
+        "relatedIdentifiers": "http://money.cnn.com/2017/02/10/investing/stocks-united-states-trump-europe-china-japan/index.html?section=money_news_international"
     }
 ]
 ```

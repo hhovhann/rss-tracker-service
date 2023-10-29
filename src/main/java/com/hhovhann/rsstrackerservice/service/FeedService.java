@@ -42,5 +42,5 @@ public interface FeedService {
      * @param dateTo feed instance end date
      * @return collection of response feed dto instances
      */
-    List<ResponseFeedDto> getFeedsByDateRangeAndCategory(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo);
+    List<ResponseFeedDto> getFeedsByCategoriesAndDateRange(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo);
 }

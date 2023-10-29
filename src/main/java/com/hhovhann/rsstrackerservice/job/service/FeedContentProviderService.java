@@ -1,5 +1,6 @@
 package com.hhovhann.rsstrackerservice.job.service;
 
+import com.hhovhann.rsstrackerservice.configuration.FeedConfiguration;
 import com.hhovhann.rsstrackerservice.entity.RssFeed;
 import com.hhovhann.rsstrackerservice.service.FeedService;
 import com.rometools.rome.feed.synd.SyndCategory;
@@ -30,16 +31,13 @@ import static java.util.stream.Collectors.toList;
 public class FeedContentProviderService {
 
     private final FeedService feedService;
+    private final FeedConfiguration feedConfiguration;
 
     @Scheduled(fixedDelay = 600000)
     public void executeAll() {
         log.debug("Read RSS News and update the database .... .... ....");
         try {
-//            String url = "http://localhost:8080/rss";  we can create our own rss localy and after all parse it
-            String url = "http://rss.cnn.com/rss/cnn_latest.rss"; // all rescources here: https://edition.cnn.com/services/rss/
-//            String url = "https://feeds.feedblitz.com/baeldung&x=1"; // all rescources here: https://edition.cnn.com/services/rss/
-
-            try (XmlReader reader = new XmlReader(new URL(url))) {
+            try (XmlReader reader = new XmlReader(new URL(feedConfiguration.getDomain()))) {
                 SyndFeed feed = new SyndFeedInput().build(reader);
                 log.debug(feed.getTitle());
                 log.debug("***********************************");
@@ -74,8 +72,7 @@ public class FeedContentProviderService {
                 log.debug("Done");
             }
         } catch (Exception e) {
-            log.error("Done");
-            throw new RuntimeException("Parse exceptipn");
+            log.error("Exception is happened .....");
         }
     }
 }
