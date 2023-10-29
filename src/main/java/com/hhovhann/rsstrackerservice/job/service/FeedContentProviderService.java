@@ -55,6 +55,7 @@ public class FeedContentProviderService {
                     rssFeed.setDescription(entry.getDescription().getValue());
                     rssFeed.setPublicationDate(ZonedDateTime.ofInstant(entry.getPublishedDate().toInstant(), ZoneId.systemDefault()));
                     rssFeed.setAuthor(entry.getAuthor());
+//                    rssFeed.setThumbnails(entry.getSource().getImage().getUrl()); // NEED TO CHECK/CHANGE
                     rssFeed.setThumbnails(feed.getImage().getUrl()); // NEED TO CHECK/CHANGE
                     // TODO add categories do smart and understood if need Category type with name, uri, etc fields or just simple string
                     rssFeed.setCategories(entry.getCategories()
