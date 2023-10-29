@@ -1,7 +1,5 @@
 package com.hhovhann.rsstrackerservice.service;
 
-
-import com.hhovhann.rsstrackerservice.dto.RequestFeedDto;
 import com.hhovhann.rsstrackerservice.dto.ResponseFeedDto;
 import com.hhovhann.rsstrackerservice.entity.RssFeed;
 import com.hhovhann.rsstrackerservice.mapper.FeedMapper;
@@ -24,46 +22,30 @@ public class FeedServiceImpl implements FeedService {
 
     @Override
     public boolean isFeedExist(RssFeed feed) {
+        log.debug("isFeedExist, feed: {}", feed);
+
         return feedRepository.exists(Example.of(feed));
     }
 
     @Override
-    public List<ResponseFeedDto> saveAllFeeds(List<RssFeed> feeds) {
+    public List<ResponseFeedDto> storeFeeds(List<RssFeed> feeds) {
+        log.debug("storeFeeds, feeds: {}", feeds);
 
-        var stored = feedRepository.saveAll(feeds);
+        var rssFeeds = feedRepository.saveAll(feeds);
 
-        return stored.stream().map(feedMapper::toDTO).toList();
-    }
-
-    @Override
-    public List<ResponseFeedDto> createFeeds(List<RequestFeedDto> feedDtos) {
-        log.debug("createFeeds, feedDtos: {}", feedDtos);
-        //TODO map all dto objects to feed objects, if need with an associations and store them to the database
-        var feeds = feedDtos.stream()
-                .map(feedMapper::toEntity)
+        return rssFeeds
+                .stream()
+                .map(feedMapper::toResponseDto)
                 .toList();
-
-        var stored = feedRepository.saveAll(feeds);
-
-        return stored.stream().map(feedMapper::toDTO).toList();
     }
 
     @Override
-    public List<ResponseFeedDto> getAllFeeds(Boolean isEnabled) {
-        log.debug("getAllFeeds, isEnabled: {}", isEnabled);
-
-        var feeds = feedRepository.findAllByIsEnabledOrderByCategoriesAscPublicationDateAsc(true);
-        // TODO map all feeds results to dto object and back to front end
-        return feeds.stream().map(feedMapper::toDTO).toList();
-    }
-
-    @Override
-    public List<ResponseFeedDto> getFeedsByCategoriesAndDateRange(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo) {
-        log.debug("getFeedsByCategoriesAndDateRange, dateFrom: {}, dateTo: {}, categories: {}", dateFrom, dateTo, categories);
+    public List<ResponseFeedDto> searchFeedsByCategoriesAndDateRange(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo) {
+        log.debug("searchFeedsByCategoriesAndDateRange,  categories: {}, dateFrom: {}, dateTo: {}", categories, dateFrom, dateTo);
 
         var feeds = feedRepository.findAllByIsEnabledAndPublicationDateBetween(true, dateFrom, dateTo);
 //        var feeds = feedRepository.findAllByCategoriesIsInAndIsEnabledAndPublicationDateBetween(categories, true, dateFrom, dateTo); TODO ENABLED AFTER CLARIFYING THE CATEGORIES PART
 
-        return feeds.stream().map(feedMapper::toDTO).toList();
+        return feeds.stream().map(feedMapper::toResponseDto).toList();
     }
 }

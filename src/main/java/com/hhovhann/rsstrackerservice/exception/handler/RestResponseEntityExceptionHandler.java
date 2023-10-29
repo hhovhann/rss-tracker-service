@@ -1,5 +1,6 @@
 package com.hhovhann.rsstrackerservice.exception.handler;
 
+import com.hhovhann.rsstrackerservice.exception.FeedContentParseException;
 import com.hhovhann.rsstrackerservice.exception.model.ErrorResponse;
 import com.hhovhann.rsstrackerservice.exception.FeedNotFoundException;
 import com.hhovhann.rsstrackerservice.exception.RssTrackerValidationException;
@@ -21,7 +22,7 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
         return new ResponseEntity<>(new ErrorResponse(badRequest, List.of(ex.getLocalizedMessage())), badRequest2);
     }
 
-    @ExceptionHandler(RssTrackerValidationException.class)
+    @ExceptionHandler({RssTrackerValidationException.class, FeedContentParseException.class})
     protected ResponseEntity<Object> handleValidationException(RuntimeException ex, WebRequest request) {
         return generateResponseEntity(ex, BAD_REQUEST, HttpStatus.BAD_REQUEST);
     }

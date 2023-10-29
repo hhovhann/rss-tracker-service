@@ -1,6 +1,5 @@
 package com.hhovhann.rsstrackerservice.service;
 
-import com.hhovhann.rsstrackerservice.dto.RequestFeedDto;
 import com.hhovhann.rsstrackerservice.dto.ResponseFeedDto;
 import com.hhovhann.rsstrackerservice.entity.RssFeed;
 
@@ -20,21 +19,8 @@ public interface FeedService {
      * @param feeds new Feed instances to storing
      * @return collection of response feed dto instances
      */
-    List<ResponseFeedDto> saveAllFeeds(List<RssFeed> feeds);
+    List<ResponseFeedDto> storeFeeds(List<RssFeed> feeds);
 
-    /***
-     * Creates collection of feeds by provided dto request data
-     * @param feedDtos collection of provided dto request data
-     * @return collection of response feed dto instances
-     */
-    List<ResponseFeedDto> createFeeds(List<RequestFeedDto> feedDtos);
-
-    /***
-     * Retrieves collection of enabled feed response dto instances
-     * @param isEnabled feed/channel enabled flag
-     * @return collection of response feed dto instances
-     */
-    List<ResponseFeedDto> getAllFeeds(Boolean isEnabled);
     /***
      * Search collection of enabled feeds by categories and date ranges
      * @param categories feed/channel enabled flag
@@ -42,5 +28,5 @@ public interface FeedService {
      * @param dateTo feed instance end date
      * @return collection of response feed dto instances
      */
-    List<ResponseFeedDto> getFeedsByCategoriesAndDateRange(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo);
+    List<ResponseFeedDto> searchFeedsByCategoriesAndDateRange(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo);
 }

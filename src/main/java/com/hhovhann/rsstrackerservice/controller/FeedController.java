@@ -1,6 +1,5 @@
 package com.hhovhann.rsstrackerservice.controller;
 
-import com.hhovhann.rsstrackerservice.dto.RequestFeedDto;
 import com.hhovhann.rsstrackerservice.dto.ResponseFeedDto;
 import com.hhovhann.rsstrackerservice.dto.SearchFeedDto;
 import com.hhovhann.rsstrackerservice.service.FeedService;
@@ -21,7 +20,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collections;
@@ -30,34 +29,24 @@ import java.util.List;
 
 @Slf4j
 @RestController
+@RequestMapping("/tracker/api/v1")
 @RequiredArgsConstructor
 public class FeedController {
 
     private final FeedService feedService;
 
-    @PostMapping("/feeds")
-    public ResponseEntity<List<ResponseFeedDto>> addFeeds(@RequestBody List<RequestFeedDto> feeds) {
-        log.debug("addFeeds, feeds: {}", feeds);
-
-        return ResponseEntity.ok(feedService.createFeeds(feeds));
-    }
-    @GetMapping("/feeds")
-    public ResponseEntity<List<ResponseFeedDto>> getFeeds(@RequestParam("isEnabled") Boolean isEnabled) {
-        log.debug("getFeeds, isEnabled: {}", isEnabled);
-
-        return ResponseEntity.ok(feedService.getAllFeeds(isEnabled));
-    }
-
     @PostMapping("/feeds/search")
-    public ResponseEntity<List<ResponseFeedDto>> searchFeedsByDateRangeAndCategories(@RequestBody @Valid SearchFeedDto searchFeedDto) {
-        log.debug("searchFeedsByDateRangeAndCategories, searchFeedDto: {}", searchFeedDto);
+    public ResponseEntity<List<ResponseFeedDto>> searchFeeds(@RequestBody @Valid SearchFeedDto searchFeedDto) {
+        log.debug("searchFeeds, searchFeedDto: {}", searchFeedDto);
 
-        return ResponseEntity.ok(feedService.getFeedsByCategoriesAndDateRange(searchFeedDto.categories(), searchFeedDto.dateFrom(), searchFeedDto.dateTo()));
+        return ResponseEntity.ok(feedService.searchFeedsByCategoriesAndDateRange(searchFeedDto.categories(), searchFeedDto.dateFrom(), searchFeedDto.dateTo()));
     }
 
     @GetMapping(path = "/rss")
     @Deprecated(since = "1.0.0")
     public Channel rss() {
+        log.debug("rss");
+
         Channel channel = new Channel();
         channel.setFeedType("rss_2.0");
         channel.setTitle("HowToDoInJava RssFeed");
@@ -106,6 +95,8 @@ public class FeedController {
     @GetMapping(path = "/atom")
     @Deprecated(since = "1.0.0")
     public Feed atom() {
+        log.debug("atom");
+
         // Atom Feed
         Feed feed = new Feed();
         feed.setFeedType("atom_1.0");
