@@ -1,9 +1,11 @@
 package com.hhovhann.rsstrackerservice.dto;
 
-import com.hhovhann.rsstrackerservice.enumes.FeedCategory;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.ZonedDateTime;
+import java.util.List;
 
-public record SearchFeedDto(@NotNull ZonedDateTime dateFrom, @NotNull ZonedDateTime dateTo, @NotNull FeedCategory category) {
+public record SearchFeedDto(@NotNull List<String> categories,
+                            @NotNull ZonedDateTime dateFrom,
+                            @NotNull ZonedDateTime dateTo) {
 }

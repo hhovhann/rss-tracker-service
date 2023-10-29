@@ -31,12 +31,13 @@ public class FeedContentProviderService {
 
     private final FeedService feedService;
 
-    @Scheduled(fixedDelay = 2000)
+    @Scheduled(fixedDelay = 600000)
     public void executeAll() {
         log.debug("Read RSS News and update the database .... .... ....");
         try {
 //            String url = "http://localhost:8080/rss";  we can create our own rss localy and after all parse it
             String url = "http://rss.cnn.com/rss/cnn_latest.rss"; // all rescources here: https://edition.cnn.com/services/rss/
+//            String url = "https://feeds.feedblitz.com/baeldung&x=1"; // all rescources here: https://edition.cnn.com/services/rss/
 
             try (XmlReader reader = new XmlReader(new URL(url))) {
                 SyndFeed feed = new SyndFeedInput().build(reader);
@@ -63,7 +64,11 @@ public class FeedContentProviderService {
                             .map(SyndCategory::getName)
                             .toList());
                     rssFeed.setRelatedIdentifiers(entry.getUri());
-                    feedToStore.add(rssFeed);
+                    rssFeed.setIsEnabled(true);
+
+                    if (!feedService.isFeedExist(rssFeed)) {
+                        feedToStore.add(rssFeed);
+                    }
                 }
                 feedService.saveAllFeeds(feedToStore);
                 log.debug("Done");

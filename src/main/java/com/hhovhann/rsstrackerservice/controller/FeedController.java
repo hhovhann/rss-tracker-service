@@ -3,7 +3,6 @@ package com.hhovhann.rsstrackerservice.controller;
 import com.hhovhann.rsstrackerservice.dto.RequestFeedDto;
 import com.hhovhann.rsstrackerservice.dto.ResponseFeedDto;
 import com.hhovhann.rsstrackerservice.dto.SearchFeedDto;
-import com.hhovhann.rsstrackerservice.enumes.FeedCategory;
 import com.hhovhann.rsstrackerservice.service.FeedService;
 import com.rometools.rome.feed.atom.Entry;
 import com.rometools.rome.feed.atom.Feed;
@@ -33,7 +32,7 @@ import java.util.List;
 
 @Slf4j
 @Validated
-@RestController("/tracker/api/v1")
+@RestController(value = "/tracker/api/v1")
 @RequiredArgsConstructor
 public class FeedController {
 
@@ -45,19 +44,18 @@ public class FeedController {
 
         return ResponseEntity.ok(feedService.createFeeds(feeds));
     }
+    @GetMapping("/feeds")
+    public ResponseEntity<List<ResponseFeedDto>> getFeeds(@RequestParam("isEnabled") Boolean isEnabled) {
+        log.debug("getFeeds, isEnabled: {}", isEnabled);
 
-    @GetMapping("/feeds/category")
-    public ResponseEntity<List<ResponseFeedDto>> getFeedsByDateRangeAndCategories(@RequestParam("dateFrom") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)  ZonedDateTime dateFrom, @RequestParam("dateTo") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)  ZonedDateTime dateTo, @RequestParam("category") FeedCategory category) {
-        log.debug("getFeedsByDateRangeAndCategories, dateFrom: {}, dateTo: {}, category: {}", dateFrom, dateTo, category);
-
-        return ResponseEntity.ok(feedService.getFeedsByDateRangeAndCategory(dateFrom, dateTo, category));
+        return ResponseEntity.ok(feedService.getAllFeeds(isEnabled));
     }
 
-    @GetMapping("/feeds/search")
+    @PostMapping("/feeds/search")
     public ResponseEntity<List<ResponseFeedDto>> searchFeedsByDateRangeAndCategories(@RequestBody SearchFeedDto searchFeedDto) {
         log.debug("searchFeedsByDateRangeAndCategories, searchFeedDto: {}", searchFeedDto);
 
-        return ResponseEntity.ok(feedService.getFeedsByDateRangeAndCategory(searchFeedDto.dateFrom(), searchFeedDto.dateTo(), searchFeedDto.category()));
+        return ResponseEntity.ok(feedService.getFeedsByDateRangeAndCategory(searchFeedDto.categories(), searchFeedDto.dateFrom(), searchFeedDto.dateTo()));
     }
 
     @GetMapping(path = "/rss")
@@ -136,7 +134,6 @@ public class FeedController {
         entry.setUpdated(postDate);
         entry.setId("https://howtodoinjava.com/spring5/webmvc/spring-mvc-cors-configuration/");
         entry.setTitle("spring-mvc-cors-configuration");
-
         com.rometools.rome.feed.atom.Category category = new com.rometools.rome.feed.atom.Category();
         category.setTerm("CORS");
         entry.setCategories(Collections.singletonList(category));

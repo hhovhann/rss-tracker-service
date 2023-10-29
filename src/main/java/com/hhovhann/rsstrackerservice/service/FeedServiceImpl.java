@@ -4,14 +4,15 @@ package com.hhovhann.rsstrackerservice.service;
 import com.hhovhann.rsstrackerservice.dto.RequestFeedDto;
 import com.hhovhann.rsstrackerservice.dto.ResponseFeedDto;
 import com.hhovhann.rsstrackerservice.entity.RssFeed;
-import com.hhovhann.rsstrackerservice.enumes.FeedCategory;
 import com.hhovhann.rsstrackerservice.mapper.FeedMapper;
 import com.hhovhann.rsstrackerservice.repository.FeedRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
+import java.util.Collections;
 import java.util.List;
 
 @Slf4j
@@ -21,6 +22,11 @@ public class FeedServiceImpl implements FeedService {
 
     private final FeedRepository feedRepository;
     private final FeedMapper feedMapper;
+
+    @Override
+    public boolean isFeedExist(RssFeed feed) {
+        return feedRepository.exists(Example.of(feed));
+    }
 
     @Override
     public List<ResponseFeedDto> saveAllFeeds(List<RssFeed> feeds) {
@@ -44,10 +50,20 @@ public class FeedServiceImpl implements FeedService {
     }
 
     @Override
-    public List<ResponseFeedDto> getFeedsByDateRangeAndCategory(ZonedDateTime dateFrom, ZonedDateTime dateTo, FeedCategory feedCategory) {
-        log.debug("getFeedsByDateRangeAndCategory, dateFrom: {}, dateTo: {}, feedCategory: {}", dateFrom, dateTo, feedCategory);
+    public List<ResponseFeedDto> getAllFeeds(Boolean isEnabled) {
+        log.debug("getAllFeeds, isEnabled: {}", isEnabled);
 
-        var feeds = feedRepository.findAllByFeedCategoryAndPublicationDateBetween(feedCategory, dateFrom, dateTo);
+        var feeds = feedRepository.findAllByIsEnabledOrderByCategoriesAscPublicationDateAsc(true);
+        // TODO map all feeds results to dto object and back to front end
+        return feeds.stream().map(feedMapper::toDTO).toList();
+    }
+
+    @Override
+    public List<ResponseFeedDto> getFeedsByDateRangeAndCategory(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo) {
+        log.debug("getFeedsByDateRangeAndCategory, dateFrom: {}, dateTo: {}, categories: {}", dateFrom, dateTo, categories);
+
+        var feeds = feedRepository.findAllByPublicationDateBetween(dateFrom, dateTo);
+        var feeds1 = feedRepository.findAllByCategoriesIsInAndPublicationDateBetween(categories, dateFrom, dateTo);
         // TODO map all feeds results to dto object and back to front end
         return feeds.stream().map(feedMapper::toDTO).toList();
     }
