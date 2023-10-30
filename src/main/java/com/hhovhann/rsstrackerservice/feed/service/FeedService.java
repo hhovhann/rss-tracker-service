@@ -1,7 +1,7 @@
-package com.hhovhann.rsstrackerservice.service;
+package com.hhovhann.rsstrackerservice.feed.service;
 
-import com.hhovhann.rsstrackerservice.dto.ResponseFeedDto;
-import com.hhovhann.rsstrackerservice.entity.RssFeed;
+import com.hhovhann.rsstrackerservice.feed.dto.ResponseFeedDto;
+import com.hhovhann.rsstrackerservice.feed.entity.RssFeed;
 
 import java.time.ZonedDateTime;
 import java.util.List;

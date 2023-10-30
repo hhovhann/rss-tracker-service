@@ -1,4 +1,4 @@
-package com.hhovhann.rsstrackerservice.exception.model;
+package com.hhovhann.rsstrackerservice.feed.exception.model;
 
 import lombok.Data;
 

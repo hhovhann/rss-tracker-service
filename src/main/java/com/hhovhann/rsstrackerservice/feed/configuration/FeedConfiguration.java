@@ -1,4 +1,4 @@
-package com.hhovhann.rsstrackerservice.configuration;
+package com.hhovhann.rsstrackerservice.feed.configuration;
 
 import lombok.Getter;
 import lombok.Setter;

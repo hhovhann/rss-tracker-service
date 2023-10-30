@@ -1,4 +1,4 @@
-package com.hhovhann.rsstrackerservice.entity;
+package com.hhovhann.rsstrackerservice.feed.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;

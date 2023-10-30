@@ -1,9 +1,9 @@
-package com.hhovhann.rsstrackerservice.service;
+package com.hhovhann.rsstrackerservice.feed.service;
 
-import com.hhovhann.rsstrackerservice.dto.ResponseFeedDto;
-import com.hhovhann.rsstrackerservice.entity.RssFeed;
-import com.hhovhann.rsstrackerservice.mapper.FeedMapper;
-import com.hhovhann.rsstrackerservice.repository.FeedRepository;
+import com.hhovhann.rsstrackerservice.feed.dto.ResponseFeedDto;
+import com.hhovhann.rsstrackerservice.feed.entity.RssFeed;
+import com.hhovhann.rsstrackerservice.feed.mapper.FeedMapper;
+import com.hhovhann.rsstrackerservice.feed.repository.FeedRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Example;
@@ -44,7 +44,7 @@ public class FeedServiceImpl implements FeedService {
         log.debug("searchFeedsByCategoriesAndDateRange,  categories: {}, dateFrom: {}, dateTo: {}", categories, dateFrom, dateTo);
 
         var feeds = feedRepository.findAllByPublicationDateBetween(dateFrom, dateTo); // TODO now only filtering by feed date ranges
-//        var feeds = feedRepository.findAllByCategoriesIsInAndPublicationDateBetween(categories, dateFrom, dateTo); TODO ENABLED AFTER CLARIFYING THE CATEGORIES PART
+//        var feeds1 = feedRepository.findAllByCategoriesContainingIgnoreCaseAndPublicationDateBetween(categories.get(0), dateFrom, dateTo);
 
         return feeds.stream().map(feedMapper::toResponseDto).toList();
     }

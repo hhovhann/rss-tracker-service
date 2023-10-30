@@ -1,7 +1,7 @@
-package com.hhovhann.rsstrackerservice.mapper;
+package com.hhovhann.rsstrackerservice.feed.mapper;
 
-import com.hhovhann.rsstrackerservice.dto.ResponseFeedDto;
-import com.hhovhann.rsstrackerservice.entity.RssFeed;
+import com.hhovhann.rsstrackerservice.feed.dto.ResponseFeedDto;
+import com.hhovhann.rsstrackerservice.feed.entity.RssFeed;
 import com.rometools.rome.feed.synd.SyndCategory;
 import com.rometools.rome.feed.synd.SyndEntry;
 import org.springframework.stereotype.Component;

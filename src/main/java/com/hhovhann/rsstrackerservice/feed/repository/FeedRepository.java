@@ -1,6 +1,6 @@
-package com.hhovhann.rsstrackerservice.repository;
+package com.hhovhann.rsstrackerservice.feed.repository;
 
-import com.hhovhann.rsstrackerservice.entity.RssFeed;
+import com.hhovhann.rsstrackerservice.feed.entity.RssFeed;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,6 +11,6 @@ import java.util.List;
 public interface FeedRepository extends JpaRepository<RssFeed, Long> {
     List<RssFeed> findAllByPublicationDateBetween(ZonedDateTime dateFrom, ZonedDateTime dateTo);
 
-    List<RssFeed> findAllByCategoriesIsInAndPublicationDateBetween(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo);
+    List<RssFeed> findAllByCategoriesContainingIgnoreCaseAndPublicationDateBetween(String category, ZonedDateTime dateFrom, ZonedDateTime dateTo);
 
 }

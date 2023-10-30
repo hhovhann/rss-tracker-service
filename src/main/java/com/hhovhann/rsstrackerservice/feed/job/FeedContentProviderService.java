@@ -1,12 +1,11 @@
-package com.hhovhann.rsstrackerservice.job;
+package com.hhovhann.rsstrackerservice.feed.job;
 
-import com.hhovhann.rsstrackerservice.configuration.FeedConfiguration;
-import com.hhovhann.rsstrackerservice.dto.ResponseFeedDto;
-import com.hhovhann.rsstrackerservice.entity.RssFeed;
-import com.hhovhann.rsstrackerservice.exception.FeedContentParseException;
-import com.hhovhann.rsstrackerservice.mapper.FeedMapper;
-import com.hhovhann.rsstrackerservice.service.FeedService;
-import com.rometools.rome.feed.synd.SyndCategory;
+import com.hhovhann.rsstrackerservice.feed.configuration.FeedConfiguration;
+import com.hhovhann.rsstrackerservice.feed.dto.ResponseFeedDto;
+import com.hhovhann.rsstrackerservice.feed.entity.RssFeed;
+import com.hhovhann.rsstrackerservice.feed.exception.FeedContentParseException;
+import com.hhovhann.rsstrackerservice.feed.mapper.FeedMapper;
+import com.hhovhann.rsstrackerservice.feed.service.FeedService;
 import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.SyndFeedInput;
@@ -36,6 +35,7 @@ public class FeedContentProviderService {
     @Scheduled(fixedDelay = 600000)
     public void executeFeedContentReading() {
         log.debug("executeFeedContentReading");
+
         try {
             try (XmlReader reader = new XmlReader(new URL(feedConfiguration.getDomain()))) {
                 SyndFeed feed = new SyndFeedInput().build(reader);

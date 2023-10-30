@@ -1,6 +1,23 @@
 # rss-tracker-service
 RSS/Atom feeds update tracker Rest API service project for Spring Boot
 
+## Project Environment
+
+- Java 21
+- H2 database
+- Spring Boot 3.1.5
+- The Room Java Library 2.1.0
+
+## Project Structure
+- feature_name 
+  - configuration
+  - controller
+  - dto
+  - entity
+  - job
+  - mapper
+  - repository
+  - service
 
 ## Testing Rest API
 

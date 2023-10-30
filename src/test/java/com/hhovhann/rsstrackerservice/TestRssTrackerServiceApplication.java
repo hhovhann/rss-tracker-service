@@ -6,8 +6,8 @@ import org.springframework.boot.test.context.TestConfiguration;
 @TestConfiguration(proxyBeanMethods = false)
 public class TestRssTrackerServiceApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.from(RssTrackerServiceApplication::main).with(TestRssTrackerServiceApplication.class).run(args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.from(RssTrackerServiceApplication::main).with(TestRssTrackerServiceApplication.class).run(args);
+    }
 
 }

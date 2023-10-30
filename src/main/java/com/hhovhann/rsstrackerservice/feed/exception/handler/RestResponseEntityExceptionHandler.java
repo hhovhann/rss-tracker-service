@@ -1,9 +1,9 @@
-package com.hhovhann.rsstrackerservice.exception.handler;
+package com.hhovhann.rsstrackerservice.feed.exception.handler;
 
-import com.hhovhann.rsstrackerservice.exception.FeedContentParseException;
-import com.hhovhann.rsstrackerservice.exception.model.ErrorResponse;
-import com.hhovhann.rsstrackerservice.exception.FeedNotFoundException;
-import com.hhovhann.rsstrackerservice.exception.RssTrackerValidationException;
+import com.hhovhann.rsstrackerservice.feed.exception.FeedContentParseException;
+import com.hhovhann.rsstrackerservice.feed.exception.model.ErrorResponse;
+import com.hhovhann.rsstrackerservice.feed.exception.FeedNotFoundException;
+import com.hhovhann.rsstrackerservice.feed.exception.RssTrackerValidationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

@@ -1,8 +1,8 @@
-package com.hhovhann.rsstrackerservice.controller;
+package com.hhovhann.rsstrackerservice.feed.controller;
 
-import com.hhovhann.rsstrackerservice.dto.ResponseFeedDto;
-import com.hhovhann.rsstrackerservice.dto.SearchFeedDto;
-import com.hhovhann.rsstrackerservice.service.FeedService;
+import com.hhovhann.rsstrackerservice.feed.dto.ResponseFeedDto;
+import com.hhovhann.rsstrackerservice.feed.dto.SearchFeedDto;
+import com.hhovhann.rsstrackerservice.feed.service.FeedService;
 import com.rometools.rome.feed.atom.Entry;
 import com.rometools.rome.feed.atom.Feed;
 import com.rometools.rome.feed.atom.Link;

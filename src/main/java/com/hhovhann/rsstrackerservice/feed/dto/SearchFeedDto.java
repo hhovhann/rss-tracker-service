@@ -1,4 +1,4 @@
-package com.hhovhann.rsstrackerservice.dto;
+package com.hhovhann.rsstrackerservice.feed.dto;
 
 import jakarta.validation.constraints.NotNull;
 
