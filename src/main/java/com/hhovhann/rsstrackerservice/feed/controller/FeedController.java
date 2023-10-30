@@ -14,6 +14,7 @@ import com.rometools.rome.feed.rss.Image;
 import com.rometools.rome.feed.rss.Item;
 import com.rometools.rome.feed.synd.SyndPerson;
 import jakarta.validation.Valid;
+import jakarta.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.ZonedDateTime;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -34,6 +36,13 @@ import java.util.List;
 public class FeedController {
 
     private final FeedService feedService;
+
+    @GetMapping("/feeds/search")
+    public ResponseEntity<List<ResponseFeedDto>> getFeeds(@PathParam("category") String category, @PathParam("dataFrom") ZonedDateTime dateFrom, @PathParam("dateTo") ZonedDateTime dateTo) {
+        log.debug("getFeeds, category: {}, dateFrom: {}, dateTo: {}", category, dateFrom, dateTo);
+
+        return ResponseEntity.ok(feedService.searchFeedsByCategoriesAndDateRange(Collections.singletonList("category"), dateFrom, dateTo));
+    }
 
     @PostMapping("/feeds/search")
     public ResponseEntity<List<ResponseFeedDto>> searchFeeds(@RequestBody @Valid SearchFeedDto searchFeedDto) {
