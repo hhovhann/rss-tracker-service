@@ -1,7 +1,7 @@
 package com.hhovhann.rsstrackerservice.feed.service;
 
 import com.hhovhann.rsstrackerservice.feed.dto.ResponseFeedDto;
-import com.hhovhann.rsstrackerservice.feed.entity.RssFeed;
+import com.hhovhann.rsstrackerservice.feed.entity.FeedEntity;
 import com.hhovhann.rsstrackerservice.feed.mapper.FeedMapper;
 import com.hhovhann.rsstrackerservice.feed.repository.FeedRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,14 +21,14 @@ public class FeedServiceImpl implements FeedService {
     private final FeedMapper feedMapper;
 
     @Override
-    public boolean isFeedExist(RssFeed feed) {
+    public boolean isFeedExist(FeedEntity feed) {
         log.debug("isFeedExist, feed: {}", feed);
 
         return feedRepository.exists(Example.of(feed));
     }
 
     @Override
-    public List<ResponseFeedDto> storeFeeds(List<RssFeed> feeds) {
+    public List<ResponseFeedDto> storeFeeds(List<FeedEntity> feeds) {
         log.debug("storeFeeds, feeds: {}", feeds);
 
         var rssFeeds = feedRepository.saveAll(feeds);

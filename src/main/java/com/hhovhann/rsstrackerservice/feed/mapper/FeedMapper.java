@@ -1,7 +1,7 @@
 package com.hhovhann.rsstrackerservice.feed.mapper;
 
 import com.hhovhann.rsstrackerservice.feed.dto.ResponseFeedDto;
-import com.hhovhann.rsstrackerservice.feed.entity.RssFeed;
+import com.hhovhann.rsstrackerservice.feed.entity.FeedEntity;
 import com.rometools.rome.feed.synd.SyndCategory;
 import com.rometools.rome.feed.synd.SyndEntry;
 import org.springframework.stereotype.Component;
@@ -12,7 +12,7 @@ import java.time.ZonedDateTime;
 @Component
 public class FeedMapper {
 
-    public ResponseFeedDto toResponseDto(RssFeed updatedEntity) {
+    public ResponseFeedDto toResponseDto(FeedEntity updatedEntity) {
         return new ResponseFeedDto(
                 updatedEntity.getTitle(),
                 updatedEntity.getLink(),
@@ -24,20 +24,20 @@ public class FeedMapper {
                 updatedEntity.getRelatedIdentifiers());
     }
 
-    public RssFeed toEntity(SyndEntry entry){
-        RssFeed rssFeed = new RssFeed();
-        rssFeed.setTitle(entry.getTitle());
-        rssFeed.setLink(entry.getLink());
-        rssFeed.setDescription(entry.getDescription().getValue());
-        rssFeed.setPublicationDate(ZonedDateTime.ofInstant(entry.getPublishedDate().toInstant(), ZoneId.systemDefault()));
-        rssFeed.setAuthor(entry.getAuthor());
-        rssFeed.setThumbnails(""); // TODO NEED TO CHECK/CHANGE entry.getSource().getImage().getUrl() or something else should be stored here
-        rssFeed.setCategories(entry.getCategories()
+    public FeedEntity toEntity(SyndEntry entry){
+        FeedEntity feedEntity = new FeedEntity();
+        feedEntity.setTitle(entry.getTitle());
+        feedEntity.setLink(entry.getLink());
+        feedEntity.setDescription(entry.getDescription().getValue());
+        feedEntity.setPublicationDate(ZonedDateTime.ofInstant(entry.getPublishedDate().toInstant(), ZoneId.systemDefault()));
+        feedEntity.setAuthor(entry.getAuthor());
+        feedEntity.setThumbnails(""); // TODO NEED TO CHECK/CHANGE entry.getSource().getImage().getUrl() or something else should be stored here
+        feedEntity.setCategories(entry.getCategories()
                 .stream()
                 .map(SyndCategory::getName)
                 .toList());
-        rssFeed.setRelatedIdentifiers(entry.getUri());
+        feedEntity.setRelatedIdentifiers(entry.getUri());
 
-        return rssFeed;
+        return feedEntity;
     }
 }

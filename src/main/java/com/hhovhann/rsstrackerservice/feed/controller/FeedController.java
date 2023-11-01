@@ -58,7 +58,7 @@ public class FeedController {
 
         Channel channel = new Channel();
         channel.setFeedType("rss_2.0");
-        channel.setTitle("HowToDoInJava RssFeed");
+        channel.setTitle("HowToDoInJava FeedEntity");
         channel.setDescription("Different Articles on latest technology");
         channel.setLink("https://howtodoinjava.com");
         channel.setUri("https://howtodoinjava.com");
@@ -67,7 +67,7 @@ public class FeedController {
         // Thumbnails
         Image image = new Image();
         image.setUrl("https://howtodoinjava.com/wp-content/uploads/2015/05/howtodoinjava_logo-55696c1cv1_site_icon-32x32.png");
-        image.setTitle("HowToDoInJava RssFeed");
+        image.setTitle("HowToDoInJava FeedEntity");
         image.setHeight(32);
         image.setWidth(32);
         channel.setImage(image);

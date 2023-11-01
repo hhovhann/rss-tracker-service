@@ -1,10 +1,11 @@
 package com.hhovhann.rsstrackerservice.feed.job;
 
-import com.hhovhann.rsstrackerservice.feed.configuration.FeedConfiguration;
 import com.hhovhann.rsstrackerservice.feed.dto.ResponseFeedDto;
-import com.hhovhann.rsstrackerservice.feed.entity.RssFeed;
+import com.hhovhann.rsstrackerservice.feed.entity.FeedConfiguration;
+import com.hhovhann.rsstrackerservice.feed.entity.FeedEntity;
 import com.hhovhann.rsstrackerservice.feed.exception.FeedContentParseException;
 import com.hhovhann.rsstrackerservice.feed.mapper.FeedMapper;
+import com.hhovhann.rsstrackerservice.feed.service.FeedConfigurationService;
 import com.hhovhann.rsstrackerservice.feed.service.FeedService;
 import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
@@ -29,30 +30,36 @@ import java.util.List;
 public class FeedContentProviderService {
 
     private final FeedService feedService;
+    private final FeedConfigurationService feedConfigurationService;
     private final FeedMapper feedMapper;
-    private final FeedConfiguration feedConfiguration;
 
     @Scheduled(fixedDelay = 600000)
     public void executeFeedContentReading() {
         log.debug("executeFeedContentReading");
 
-        try {
-            try (XmlReader reader = new XmlReader(new URL(feedConfiguration.getDomain()))) {
-                SyndFeed feed = new SyndFeedInput().build(reader);
-                var feedToStore = new ArrayList<RssFeed>();
-                for (SyndEntry entry : feed.getEntries()) {
-                    log.debug("Mapping current SyndEntry to RssFeed:{}", entry);
+        // Step 1: Scan Feed configuration table and get rss.xml url which are enabled
+        List<FeedConfiguration> feeds = feedConfigurationService.getEnabledFeedConfigurations();
 
-                    RssFeed rssFeed = feedMapper.toEntity(entry);
-                    if (!feedService.isFeedExist(rssFeed)) {
-                        feedToStore.add(rssFeed);
+        // Step 2: For each Feed enabled domain parse the entity/item data and store to FeedEntity table the update
+        feeds.forEach(currentFeedConfiguration -> {
+            try {
+                try (XmlReader reader = new XmlReader(new URL(currentFeedConfiguration.getDomain()))) {
+                    SyndFeed feed = new SyndFeedInput().build(reader);
+                    var feedToStore = new ArrayList<FeedEntity>();
+                    for (SyndEntry entry : feed.getEntries()) {
+                        log.debug("Mapping current SyndEntry to FeedEntity:{}", entry);
+
+                        FeedEntity feedEntity = feedMapper.toEntity(entry);
+                        if (!feedService.isFeedExist(feedEntity)) {
+                            feedToStore.add(feedEntity);
+                        }
                     }
+                    List<ResponseFeedDto> storedFeeds = feedService.storeFeeds(feedToStore);
+                    log.debug("Stored {} Feed(s) to local database", storedFeeds.size());
                 }
-                List<ResponseFeedDto> storedFeeds = feedService.storeFeeds(feedToStore);
-                log.debug("Stored {} Feed(s) to local database", storedFeeds.size());
+            } catch (Exception e) {
+                throw new FeedContentParseException("Something went wrong");
             }
-        } catch (Exception e) {
-            throw new FeedContentParseException("Something went wrong");
-        }
+        });
     }
 }

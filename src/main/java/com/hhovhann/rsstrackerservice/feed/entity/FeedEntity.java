@@ -20,7 +20,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class RssFeed {
+public class FeedEntity {
     @Id
     @GeneratedValue
     private Long id;
