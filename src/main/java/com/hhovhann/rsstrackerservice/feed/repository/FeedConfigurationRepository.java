@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 public interface FeedConfigurationRepository extends JpaRepository<FeedConfiguration, Long> {
 
-    List<FeedConfiguration> findAllByIngestionEnable();
+    List<FeedConfiguration> findAllByIngestionEnableTrue();
 
 }

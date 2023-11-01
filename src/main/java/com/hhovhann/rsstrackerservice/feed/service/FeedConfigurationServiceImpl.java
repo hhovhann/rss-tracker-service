@@ -15,6 +15,6 @@ public class FeedConfigurationServiceImpl implements FeedConfigurationService {
     private final FeedConfigurationRepository feedConfigurationRepository;
     @Override
     public List<FeedConfiguration> getEnabledFeedConfigurations() {
-        return feedConfigurationRepository.findAllByIngestionEnable();
+        return feedConfigurationRepository.findAllByIngestionEnableTrue();
     }
 }
