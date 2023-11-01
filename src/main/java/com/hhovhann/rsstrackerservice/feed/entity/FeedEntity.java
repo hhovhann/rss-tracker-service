@@ -35,5 +35,4 @@ public class FeedEntity {
     @ElementCollection
     List<String> categories = new ArrayList<>();
     String relatedIdentifiers;
-    Boolean isEnabled;
 }

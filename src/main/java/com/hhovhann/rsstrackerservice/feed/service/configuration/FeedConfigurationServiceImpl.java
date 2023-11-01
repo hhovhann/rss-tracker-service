@@ -1,4 +1,4 @@
-package com.hhovhann.rsstrackerservice.feed.service;
+package com.hhovhann.rsstrackerservice.feed.service.configuration;
 
 import com.hhovhann.rsstrackerservice.feed.entity.FeedConfiguration;
 import com.hhovhann.rsstrackerservice.feed.repository.FeedConfigurationRepository;

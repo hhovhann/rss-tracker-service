@@ -10,7 +10,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 @Component
-public class FeedMapper {
+public class FeedEntityMapper {
 
     public ResponseFeedDto toResponseDto(FeedEntity updatedEntity) {
         return new ResponseFeedDto(

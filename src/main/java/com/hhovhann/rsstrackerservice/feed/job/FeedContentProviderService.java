@@ -4,9 +4,9 @@ import com.hhovhann.rsstrackerservice.feed.dto.ResponseFeedDto;
 import com.hhovhann.rsstrackerservice.feed.entity.FeedConfiguration;
 import com.hhovhann.rsstrackerservice.feed.entity.FeedEntity;
 import com.hhovhann.rsstrackerservice.feed.exception.FeedContentParseException;
-import com.hhovhann.rsstrackerservice.feed.mapper.FeedMapper;
-import com.hhovhann.rsstrackerservice.feed.service.FeedConfigurationService;
-import com.hhovhann.rsstrackerservice.feed.service.FeedService;
+import com.hhovhann.rsstrackerservice.feed.mapper.FeedEntityMapper;
+import com.hhovhann.rsstrackerservice.feed.service.configuration.FeedConfigurationService;
+import com.hhovhann.rsstrackerservice.feed.service.entity.FeedEntityService;
 import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.SyndFeedInput;
@@ -29,9 +29,9 @@ import java.util.List;
 @ConditionalOnProperty(name = "scheduler.enabled", matchIfMissing = true)
 public class FeedContentProviderService {
 
-    private final FeedService feedService;
+    private final FeedEntityService feedEntityService;
     private final FeedConfigurationService feedConfigurationService;
-    private final FeedMapper feedMapper;
+    private final FeedEntityMapper feedEntityMapper;
 
     @Scheduled(fixedDelay = 600000)
     public void executeFeedContentReading() {
@@ -49,12 +49,12 @@ public class FeedContentProviderService {
                     for (SyndEntry entry : feed.getEntries()) {
                         log.debug("Mapping current SyndEntry to FeedEntity:{}", entry);
 
-                        FeedEntity feedEntity = feedMapper.toEntity(entry);
-                        if (!feedService.isFeedExist(feedEntity)) {
+                        FeedEntity feedEntity = feedEntityMapper.toEntity(entry);
+                        if (!feedEntityService.isFeedExist(feedEntity)) {
                             feedToStore.add(feedEntity);
                         }
                     }
-                    List<ResponseFeedDto> storedFeeds = feedService.storeFeeds(feedToStore);
+                    List<ResponseFeedDto> storedFeeds = feedEntityService.storeFeeds(feedToStore);
                     log.debug("Stored {} Feed(s) to local database", storedFeeds.size());
                 }
             } catch (Exception e) {

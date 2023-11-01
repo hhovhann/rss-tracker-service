@@ -1,6 +1,6 @@
 package com.hhovhann.rsstrackerservice.feed.controller;
 
-import com.hhovhann.rsstrackerservice.feed.repository.FeedRepository;
+import com.hhovhann.rsstrackerservice.feed.repository.FeedEntityRepository;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
@@ -31,9 +31,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-class FeedControllerTest {
+class FeedEntityControllerTest {
     @Autowired
-    private FeedRepository feedRepository;
+    private FeedEntityRepository feedEntityRepository;
 
     @Autowired
     private MockMvc mockMvc;
@@ -55,7 +55,7 @@ class FeedControllerTest {
                 .andExpect(jsonPath("$").isMap())
                 .andExpect(jsonPath("$", aMapWithSize(3)));
 
-        assertThat(this.feedRepository.findAllByPublicationDateBetween(ZonedDateTime.now().minusDays(3L), ZonedDateTime.now()), hasSize(2));
+        assertThat(this.feedEntityRepository.findAllByPublicationDateBetween(ZonedDateTime.now().minusDays(3L), ZonedDateTime.now()), hasSize(2));
     }
 
     @Test

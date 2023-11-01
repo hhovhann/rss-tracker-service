@@ -8,7 +8,7 @@ import java.time.ZonedDateTime;
 import java.util.List;
 
 @Repository
-public interface FeedRepository extends JpaRepository<FeedEntity, Long> {
+public interface FeedEntityRepository extends JpaRepository<FeedEntity, Long> {
     List<FeedEntity> findAllByPublicationDateBetween(ZonedDateTime dateFrom, ZonedDateTime dateTo);
 
     List<FeedEntity> findAllByCategoriesContainingIgnoreCaseAndPublicationDateBetween(String category, ZonedDateTime dateFrom, ZonedDateTime dateTo);

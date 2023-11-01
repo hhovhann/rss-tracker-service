@@ -2,7 +2,7 @@ package com.hhovhann.rsstrackerservice.feed.controller;
 
 import com.hhovhann.rsstrackerservice.feed.dto.ResponseFeedDto;
 import com.hhovhann.rsstrackerservice.feed.dto.SearchFeedDto;
-import com.hhovhann.rsstrackerservice.feed.service.FeedService;
+import com.hhovhann.rsstrackerservice.feed.service.entity.FeedEntityService;
 import com.rometools.rome.feed.atom.Entry;
 import com.rometools.rome.feed.atom.Feed;
 import com.rometools.rome.feed.atom.Link;
@@ -33,22 +33,22 @@ import java.util.List;
 @RestController
 @RequestMapping("/tracker/api/v1")
 @RequiredArgsConstructor
-public class FeedController {
+public class FeedEntityController {
 
-    private final FeedService feedService;
+    private final FeedEntityService feedEntityService;
 
     @GetMapping("/feeds/search")
     public ResponseEntity<List<ResponseFeedDto>> getFeeds(@PathParam("category") String category, @PathParam("dataFrom") ZonedDateTime dateFrom, @PathParam("dateTo") ZonedDateTime dateTo) {
         log.debug("getFeeds, category: {}, dateFrom: {}, dateTo: {}", category, dateFrom, dateTo);
 
-        return ResponseEntity.ok(feedService.searchFeedsByCategoriesAndDateRange(Collections.singletonList("category"), dateFrom, dateTo));
+        return ResponseEntity.ok(feedEntityService.searchFeedsByCategoriesAndDateRange(Collections.singletonList("category"), dateFrom, dateTo));
     }
 
     @PostMapping("/feeds/search")
     public ResponseEntity<List<ResponseFeedDto>> searchFeeds(@RequestBody @Valid SearchFeedDto searchFeedDto) {
         log.debug("searchFeeds, searchFeedDto: {}", searchFeedDto);
 
-        return ResponseEntity.ok(feedService.searchFeedsByCategoriesAndDateRange(searchFeedDto.categories(), searchFeedDto.dateFrom(), searchFeedDto.dateTo()));
+        return ResponseEntity.ok(feedEntityService.searchFeedsByCategoriesAndDateRange(searchFeedDto.categories(), searchFeedDto.dateFrom(), searchFeedDto.dateTo()));
     }
 
     @GetMapping(path = "/rss")

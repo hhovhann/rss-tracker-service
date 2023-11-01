@@ -1,4 +1,4 @@
-package com.hhovhann.rsstrackerservice.feed.service;
+package com.hhovhann.rsstrackerservice.feed.service.entity;
 
 import com.hhovhann.rsstrackerservice.feed.dto.ResponseFeedDto;
 import com.hhovhann.rsstrackerservice.feed.entity.FeedEntity;
@@ -6,7 +6,7 @@ import com.hhovhann.rsstrackerservice.feed.entity.FeedEntity;
 import java.time.ZonedDateTime;
 import java.util.List;
 
-public interface FeedService {
+public interface FeedEntityService {
     /***
      * Checks is the feed exists in database: criteria query with all fields combination excluding collections and id
      * @param feed the current feed instance
