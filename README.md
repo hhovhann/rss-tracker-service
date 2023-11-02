@@ -6,6 +6,7 @@ RSS/Atom feeds update tracker Rest API service project for Spring Boot
 - Java 21
 - H2 database
 - Spring Boot 3.1.5
+- MAVEN 3.9.5
 - The Room Java Library 2.1.0
 
 ## Project Structure
@@ -87,8 +88,9 @@ RESPONSE BODY:
 ]
 ```
 
-## How to run
-- TODO ADD HERE HOW CAN RUN THE APPLICATION AND TESTS 
+## Software Run
+- Run application with bach command from project root ./scripts/run.sh
+- Run the application from the IDEA itself
 
 # References
 [RSS](https://en.wikipedia.org/wiki/RSS)
