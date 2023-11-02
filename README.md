@@ -19,7 +19,9 @@ RSS/Atom feeds update tracker Rest API service project for Spring Boot
   - repository
   - service
 
-## Testing Rest API
+
+## Software Behaviour
+System designed as a Spring Boot Web Application. Provides Rest API with following endpoints:
 
 1. Get list of stored resources faceted by given categories and date range (with query params) 
 ```
@@ -92,5 +94,6 @@ RESPONSE BODY:
 - Run application with bach command from project root ./scripts/run.sh
 - Run the application from the IDEA itself
 
-# References
-[RSS](https://en.wikipedia.org/wiki/RSS)
+
+## Software Design and Diagram
+Please check the [Rss Tracker Service Design](design/rss-tracker-service-draft-design-flow.drawio)
