@@ -37,10 +37,10 @@ public class FeedContentProviderService {
     public void executeFeedContentReading() {
         log.debug("executeFeedContentReading");
 
-        // Step 1: Scan Feed configuration table and get rss.xml url which are enabled
+        // Scan Feed configuration table and get rss.xml url which are enabled
         List<FeedConfiguration> feeds = feedConfigurationService.getEnabledFeedConfigurations();
 
-        // Step 2: For each Feed enabled domain parse the entity/item data and store to FeedEntity table the update
+        // For each enabled feed transform item/entry data and to feed entity object and store to database
         feeds.forEach(currentFeedConfiguration -> {
             try {
                 try (XmlReader reader = new XmlReader(new URL(currentFeedConfiguration.getDomain()))) {
@@ -58,7 +58,7 @@ public class FeedContentProviderService {
                     log.debug("Stored {} Feed(s) to local database", storedFeeds.size());
                 }
             } catch (Exception e) {
-                throw new FeedContentParseException("Something went wrong");
+                throw new FeedContentParseException("Something went wrong.");
             }
         });
     }

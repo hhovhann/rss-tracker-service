@@ -31,7 +31,7 @@ public class FeedEntityMapper {
         feedEntity.setDescription(entry.getDescription().getValue());
         feedEntity.setPublicationDate(ZonedDateTime.ofInstant(entry.getPublishedDate().toInstant(), ZoneId.systemDefault()));
         feedEntity.setAuthor(entry.getAuthor());
-        feedEntity.setThumbnails(""); // TODO NEED TO CHECK/CHANGE entry.getSource().getImage().getUrl() or something else should be stored here
+        feedEntity.setThumbnails("thumbnails icon link here"); // TODO NEED TO CHECK/CHANGE entry.getSource().getImage().getUrl() or something else should be stored here
         feedEntity.setCategories(entry.getCategories()
                 .stream()
                 .map(SyndCategory::getName)
