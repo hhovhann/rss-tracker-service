@@ -19,7 +19,6 @@ RSS/Atom feeds update tracker Rest API service project for Spring Boot
   - repository
   - service
 
-
 ## Software Behaviour
 System designed as a Spring Boot Web Application. Provides Rest API with following endpoints:
 
@@ -102,3 +101,6 @@ RESPONSE BODY:
 
 ## Software Design and Diagram
 Please check the [Rss Tracker Service Design](design/rss-tracker-service-draft-design-flow.drawio)
+
+## Nice to have
+- Tests needs to be added (unit, integration, load/performance could be checked with Jmeter)
