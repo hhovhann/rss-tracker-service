@@ -2,7 +2,6 @@ INSERT INTO FEED_ENTITY (id,
      title,
      link,
      description,
-
      author,
      publication_date,
      thumbnails,
@@ -16,6 +15,6 @@ INSERT INTO FEED_ENTITY (id,
               '',
               'https://howtodoinjava.com/spring5/webmvc/spring-mvc-cors-configuration/');
 
-INSERT INTO FEED_CATEGORIES (FEED_ENTITY_ID, CATEGORIES) VALUES (1L, 'JAVA');
-INSERT INTO FEED_CATEGORIES (FEED_ENTITY_ID, CATEGORIES) VALUES (1L, 'CORS');
-INSERT INTO FEED_CONFIGURATION (ID, DOMAIN, INGESTION_ENABLE) VALUES (111L, 'https://hypothes.is/stream.rss', true);
+INSERT INTO FEED_CATEGORIES (feed_entity_id, categories) VALUES (5L, 'JAVA');
+INSERT INTO FEED_CATEGORIES (feed_entity_id, categories) VALUES (5L, 'CORS');
+INSERT INTO FEED_CONFIGURATION (id, domain, ingestion_enable) VALUES (5L, 'https://hypothes.is/stream.rss', true);

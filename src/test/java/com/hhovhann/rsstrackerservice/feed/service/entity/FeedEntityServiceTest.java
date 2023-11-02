@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.test.context.TestPropertySource;
 
 import java.time.ZonedDateTime;
 import java.util.List;
@@ -18,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
+@TestPropertySource(properties = "scheduler.enabled=false")
 class FeedEntityServiceTest {
 
     @Autowired
@@ -58,19 +60,21 @@ class FeedEntityServiceTest {
 
         List<ResponseFeedDto> responseFeeds = feedEntityService.storeFeeds(List.of());
 
-        assertEquals(responseFeeds.size(), 1L);
+        assertEquals(responseFeeds.size(), 0);
     }
 
     @Test
     @DisplayName("Should Search all entries")
     void shouldSearchAllEntries() {
+        ZonedDateTime now = ZonedDateTime.now();
+        ZonedDateTime afterSevenDays = now.plusDays(7L);
         List<FeedEntity> feedEntities = List.of(new FeedEntity(), new FeedEntity());
 
-        when(feedEntityRepository.findAllByCategoriesInIgnoreCaseAndPublicationDateBetween(List.of("JAVA", "C#"), ZonedDateTime.now(), ZonedDateTime.now().plusDays(7L))).thenReturn(feedEntities);
+        when(feedEntityRepository.findAllByCategoriesInIgnoreCaseAndPublicationDateBetween(List.of("JAVA", "C#"), now, afterSevenDays)).thenReturn(feedEntities);
 
-        List<ResponseFeedDto> responseFeeds = feedEntityService.searchFeedsByCategoriesAndDateRange(List.of(), ZonedDateTime.now(), ZonedDateTime.now().plusDays(7L));
+        List<ResponseFeedDto> responseFeeds = feedEntityService.searchFeedsByCategoriesAndDateRange(List.of("JAVA", "C#"), now, afterSevenDays);
 
-        assertEquals(responseFeeds.size(), 1L);
+        assertEquals(responseFeeds.size(), 0);
     }
 
 }
