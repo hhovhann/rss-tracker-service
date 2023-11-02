@@ -43,8 +43,8 @@ public class FeedEntityServiceImpl implements FeedEntityService {
     public List<ResponseFeedDto> searchFeedsByCategoriesAndDateRange(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo) {
         log.debug("searchFeedsByCategoriesAndDateRange,  categories: {}, dateFrom: {}, dateTo: {}", categories, dateFrom, dateTo);
 
-        var feeds = feedEntityRepository.findAllByPublicationDateBetween(dateFrom, dateTo); // TODO now only filtering by feed date ranges
-//        var feeds = feedRepository.findAllByCategoriesContainingIgnoreCaseAndPublicationDateBetween(categories.get(0), dateFrom, dateTo);
+//        var feeds = feedEntityRepository.findAllByPublicationDateBetween(dateFrom, dateTo); // TODO now only filtering by feed date ranges
+        var feeds = feedEntityRepository.findAllByCategoriesContainingIgnoreCaseAndPublicationDateBetween(categories.get(0), dateFrom, dateTo);
 
         return feeds.stream().map(feedEntityMapper::toResponseDto).toList();
     }

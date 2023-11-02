@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.ZonedDateTime;
@@ -38,10 +39,10 @@ public class FeedEntityController {
     private final FeedEntityService feedEntityService;
 
     @GetMapping("/feeds/search")
-    public ResponseEntity<List<ResponseFeedDto>> getFeeds(@PathParam("category") String category, @PathParam("dataFrom") ZonedDateTime dateFrom, @PathParam("dateTo") ZonedDateTime dateTo) {
+    public ResponseEntity<List<ResponseFeedDto>> getFeeds(@RequestParam("category") String category, @RequestParam("dataFrom") ZonedDateTime dateFrom, @RequestParam("dateTo") ZonedDateTime dateTo) {
         log.debug("getFeeds, category: {}, dateFrom: {}, dateTo: {}", category, dateFrom, dateTo);
 
-        return ResponseEntity.ok(feedEntityService.searchFeedsByCategoriesAndDateRange(Collections.singletonList("category"), dateFrom, dateTo));
+        return ResponseEntity.ok(feedEntityService.searchFeedsByCategoriesAndDateRange(Collections.singletonList(category), dateFrom, dateTo));
     }
 
     @PostMapping("/feeds/search")
