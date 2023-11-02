@@ -7,6 +7,7 @@ import com.hhovhann.rsstrackerservice.feed.repository.FeedEntityRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
@@ -24,7 +25,7 @@ public class FeedEntityServiceImpl implements FeedEntityService {
     public boolean isFeedExist(FeedEntity feed) {
         log.debug("isFeedExist, feed: {}", feed);
 
-        return feedEntityRepository.exists(Example.of(feed));
+        return feedEntityRepository.exists(Example.of(feed, ExampleMatcher.matchingAll()));
     }
 
     @Override
