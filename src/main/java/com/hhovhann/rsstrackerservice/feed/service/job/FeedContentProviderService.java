@@ -1,4 +1,4 @@
-package com.hhovhann.rsstrackerservice.feed.job;
+package com.hhovhann.rsstrackerservice.feed.service.job;
 
 import com.hhovhann.rsstrackerservice.feed.dto.ResponseFeedDto;
 import com.hhovhann.rsstrackerservice.feed.entity.FeedConfiguration;
