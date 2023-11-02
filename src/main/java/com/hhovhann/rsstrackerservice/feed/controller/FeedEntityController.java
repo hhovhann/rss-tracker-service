@@ -39,10 +39,10 @@ public class FeedEntityController {
     private final FeedEntityService feedEntityService;
 
     @GetMapping("/feeds/search")
-    public ResponseEntity<List<ResponseFeedDto>> getFeeds(@RequestParam("category") String category, @RequestParam("dataFrom") ZonedDateTime dateFrom, @RequestParam("dateTo") ZonedDateTime dateTo) {
-        log.debug("getFeeds, category: {}, dateFrom: {}, dateTo: {}", category, dateFrom, dateTo);
+    public ResponseEntity<List<ResponseFeedDto>> getFeeds(@RequestParam("categories") List<String> categories, @RequestParam("dataFrom") ZonedDateTime dateFrom, @RequestParam("dateTo") ZonedDateTime dateTo) {
+        log.debug("getFeeds, categories: {}, dateFrom: {}, dateTo: {}", categories, dateFrom, dateTo);
 
-        return ResponseEntity.ok(feedEntityService.searchFeedsByCategoriesAndDateRange(Collections.singletonList(category), dateFrom, dateTo));
+        return ResponseEntity.ok(feedEntityService.searchFeedsByCategoriesAndDateRange(categories, dateFrom, dateTo));
     }
 
     @PostMapping("/feeds/search")

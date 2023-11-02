@@ -10,8 +10,6 @@ import java.util.List;
 @Repository
 public interface FeedEntityRepository extends JpaRepository<FeedEntity, Long> {
 
-    List<FeedEntity> findAllByCategoriesContainingIgnoreCaseAndPublicationDateBetween(String category, ZonedDateTime dateFrom, ZonedDateTime dateTo);
-
     List<FeedEntity> findAllByCategoriesInIgnoreCaseAndPublicationDateBetween(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo);
 
 }
