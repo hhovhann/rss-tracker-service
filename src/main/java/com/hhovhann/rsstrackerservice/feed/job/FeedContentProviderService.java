@@ -17,10 +17,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import org.xml.sax.InputSource;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,25 +41,27 @@ public class FeedContentProviderService {
         List<FeedConfiguration> feeds = feedConfigurationService.getEnabledFeedConfigurations();
 
         // For each enabled feed transform item/entry data and to feed entity object and store to database
-        feeds.forEach(currentFeedConfiguration -> {
-            try {
-                try (XmlReader reader = new XmlReader(new URL(currentFeedConfiguration.getDomain()))) {
-                    SyndFeed feed = new SyndFeedInput().build(reader);
-                    var feedToStore = new ArrayList<FeedEntity>();
-                    for (SyndEntry entry : feed.getEntries()) {
-                        log.debug("Mapping current SyndEntry to FeedEntity:{}", entry);
+        feeds.forEach(this::processFeedTransformation);
+    }
 
-                        FeedEntity feedEntity = feedEntityMapper.toEntity(entry);
-                        if (!feedEntityService.isFeedExist(feedEntity)) {
-                            feedToStore.add(feedEntity);
-                        }
+    private void processFeedTransformation(FeedConfiguration currentFeedConfiguration) {
+        try {
+            try (XmlReader reader = new XmlReader(new URL(currentFeedConfiguration.getDomain()))) {
+                SyndFeed feed = new SyndFeedInput().build(reader);
+                var feedToStore = new ArrayList<FeedEntity>();
+                for (SyndEntry entry : feed.getEntries()) {
+                    log.debug("Mapping current SyndEntry to FeedEntity:{}", entry);
+
+                    FeedEntity feedEntity = feedEntityMapper.toEntity(entry);
+                    if (!feedEntityService.isFeedExist(feedEntity)) {
+                        feedToStore.add(feedEntity);
                     }
-                    List<ResponseFeedDto> storedFeeds = feedEntityService.storeFeeds(feedToStore);
-                    log.debug("Stored {} Feed(s) to local database", storedFeeds.size());
                 }
-            } catch (Exception e) {
-                throw new FeedContentParseException("Something went wrong.");
+                List<ResponseFeedDto> storedFeeds = feedEntityService.storeFeeds(feedToStore);
+                log.debug("Stored {} Feed(s) to local database", storedFeeds.size());
             }
-        });
+        } catch (Exception e) {
+            throw new FeedContentParseException("Something went wrong.");
+        }
     }
 }

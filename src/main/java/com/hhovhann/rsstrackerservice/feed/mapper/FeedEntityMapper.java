@@ -24,14 +24,14 @@ public class FeedEntityMapper {
                 updatedEntity.getRelatedIdentifiers());
     }
 
-    public FeedEntity toEntity(SyndEntry entry){
+    public FeedEntity toEntity(SyndEntry entry) {
         FeedEntity feedEntity = new FeedEntity();
         feedEntity.setTitle(entry.getTitle());
         feedEntity.setLink(entry.getLink());
         feedEntity.setDescription(entry.getDescription().getValue());
         feedEntity.setPublicationDate(ZonedDateTime.ofInstant(entry.getPublishedDate().toInstant(), ZoneId.systemDefault()));
         feedEntity.setAuthor(entry.getAuthor());
-        feedEntity.setThumbnails("thumbnails icon link here"); // TODO NEED TO CHECK/CHANGE entry.getSource().getImage().getUrl() or something else should be stored here
+        feedEntity.setThumbnails("entry.getSource().getIcon().getUrl() + ");
         feedEntity.setCategories(entry.getCategories()
                 .stream()
                 .map(SyndCategory::getName)
