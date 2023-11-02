@@ -1,4 +1,10 @@
 package com.hhovhann.rsstrackerservice.feed.dto;
 
-public record RequestFeedDto(String title, String link, String description) {
+import jakarta.validation.constraints.NotNull;
+
+import java.time.ZonedDateTime;
+import java.util.List;
+
+public record RequestFeedDto(@NotNull List<String> categories, @NotNull ZonedDateTime dateFrom,
+                             @NotNull ZonedDateTime dateTo) {
 }

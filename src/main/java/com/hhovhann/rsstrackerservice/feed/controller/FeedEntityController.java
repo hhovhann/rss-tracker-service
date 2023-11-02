@@ -1,7 +1,7 @@
 package com.hhovhann.rsstrackerservice.feed.controller;
 
+import com.hhovhann.rsstrackerservice.feed.dto.RequestFeedDto;
 import com.hhovhann.rsstrackerservice.feed.dto.ResponseFeedDto;
-import com.hhovhann.rsstrackerservice.feed.dto.SearchFeedDto;
 import com.hhovhann.rsstrackerservice.feed.service.entity.FeedEntityService;
 import com.rometools.rome.feed.atom.Entry;
 import com.rometools.rome.feed.atom.Feed;
@@ -45,10 +45,10 @@ public class FeedEntityController {
     }
 
     @PostMapping("/feeds/search")
-    public ResponseEntity<List<ResponseFeedDto>> searchFeeds(@RequestBody @Valid SearchFeedDto searchFeedDto) {
-        log.debug("searchFeeds, searchFeedDto: {}", searchFeedDto);
+    public ResponseEntity<List<ResponseFeedDto>> searchFeeds(@RequestBody @Valid RequestFeedDto requestFeedDto) {
+        log.debug("searchFeeds, requestFeedDto: {}", requestFeedDto);
 
-        return ResponseEntity.ok(feedEntityService.searchFeedsByCategoriesAndDateRange(searchFeedDto.categories(), searchFeedDto.dateFrom(), searchFeedDto.dateTo()));
+        return ResponseEntity.ok(feedEntityService.searchFeedsByCategoriesAndDateRange(requestFeedDto.categories(), requestFeedDto.dateFrom(), requestFeedDto.dateTo()));
     }
 
     @GetMapping(path = "/rss")
