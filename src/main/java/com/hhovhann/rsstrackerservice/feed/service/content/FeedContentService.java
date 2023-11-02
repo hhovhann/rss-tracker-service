@@ -1,4 +1,4 @@
-package com.hhovhann.rsstrackerservice.feed.service.job;
+package com.hhovhann.rsstrackerservice.feed.service.content;
 
 import com.hhovhann.rsstrackerservice.feed.dto.ResponseFeedDto;
 import com.hhovhann.rsstrackerservice.feed.entity.FeedConfiguration;
@@ -27,7 +27,7 @@ import java.util.List;
 @EnableScheduling
 @RequiredArgsConstructor
 @ConditionalOnProperty(name = "scheduler.enabled", matchIfMissing = true)
-public class FeedContentProviderService {
+public class FeedContentService {
 
     private final FeedEntityService feedEntityService;
     private final FeedConfigurationService feedConfigurationService;
