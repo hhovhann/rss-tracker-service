@@ -1,15 +1,15 @@
-# rss-tracker-service
+# Software Document
 RSS/Atom feeds update tracker Rest API service project for Spring Boot
 
-## Project Environment
+## Software Environment
 
 - Java 21
 - H2 database
 - Spring Boot 3.1.5
-- MAVEN 3.9.5
+- Maven 3.9.5
 - The Room Java Library 2.1.0
 
-## Project Structure
+## Software Structure
 - feature_name(feed) 
   - controller
   - dto
@@ -93,7 +93,6 @@ RESPONSE BODY:
 ## Software Run
 - Run application with bach command from project root ./scripts/run.sh
 - Run the application from the IDEA itself
-
 
 ## Software Design and Diagram
 Please check the [Rss Tracker Service Design](design/rss-tracker-service-draft-design-flow.drawio)
