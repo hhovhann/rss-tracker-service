@@ -105,6 +105,7 @@ RESPONSE BODY:
 Please check the [Rss Tracker Service Design](design/rss-tracker-service-draft-design-flow.drawio)
 
 ## Nice to have next releases
-
-- Docker support
-- Flyway migration support
+- Unit, Integration tests cleanup, finalize
+- Support: Run as a container
+- Support: Flyway migration
+- Performance test (Jmeter scenarios)
