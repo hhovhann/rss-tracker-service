@@ -5,6 +5,7 @@ RSS/Atom feeds update tracker Rest API service project for Spring Boot
 
 - Java 21
 - Postgres database
+- Flyway migration
 - Spring Boot 3.1.5
 - Maven 3.9.5
 - The Room Java Library 2.1.0
@@ -97,15 +98,15 @@ RESPONSE BODY:
 ## Software Setup and Run
 - Download and install [Docker Desktop](https://www.docker.com/products/docker-desktop/) if you not have it installed in your machine
 - Run local postgres ```docker run -p 5432:5432 -e POSTGRES_USER=api-user  -e POSTGRES_PASSWORD=api-password -e POSTGRES_DB=rss-trackerdev-db -d postgres:14.5```
-- Run `create_feed_configuration_data.sql` to fill feed configuration table 
 - Run application with bach command from project root ./scripts/run.sh
 - Run the application from the IDEA itself
+- Run `create_feed_configuration_data.sql` to fill feed configuration table 
 
 ## Software Design and Diagram
 Please check the [Rss Tracker Service Design](design/rss-tracker-service-draft-design-flow.drawio)
 
 ## Nice to have next releases
-- Unit, Integration tests cleanup, finalize
+- Unit, Integration tests cleanup, finalize IN PROGRESS
 - Support: Run as a container
-- Support: Flyway migration
+- Support: Flyway migration                 DONE
 - Performance test (Jmeter scenarios)
