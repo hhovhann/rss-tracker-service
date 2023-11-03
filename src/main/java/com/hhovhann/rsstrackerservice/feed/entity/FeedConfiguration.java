@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Table
+//@Table(name="feed_configuration")
 @Entity
 @Getter
 @Setter

@@ -16,7 +16,7 @@ import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table
+//@Table
 @Entity
 @Getter
 @Setter
