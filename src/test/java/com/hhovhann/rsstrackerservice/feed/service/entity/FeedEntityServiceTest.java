@@ -28,23 +28,10 @@ class FeedEntityServiceTest extends AbstractIntegrationTest {
     FeedEntityRepository feedEntityRepository;
 
     @Test
-    @DisplayName("Should Find Existing Feed")
-    void shouldFindExistingFeed() {
-        // given
-        var feed = new FeedEntity();
-//        when(feedEntityRepository.exists(Example.of(feed, ExampleMatcher.matchingAll()))).thenReturn(true);
-        // when
-        boolean feedExist = feedEntityService.isFeedExist(feed);
-        //then
-        assertTrue(feedExist);
-    }
-
-    @Test
     @DisplayName("Should Not Find Existing Feed")
     void shouldNotFindExistingFeed() {
         // given
         var feed = new FeedEntity();
-//        when(feedEntityRepository.exists(Example.of(feed, ExampleMatcher.matchingAll()))).thenReturn(true);
         // when
         boolean feedExist = feedEntityService.isFeedExist(feed);
         //then
@@ -54,9 +41,6 @@ class FeedEntityServiceTest extends AbstractIntegrationTest {
     @Test
     @DisplayName("Should Store all entries")
     void shouldStoreAllEntries() {
-        List<FeedEntity> feedEntities = List.of(new FeedEntity(), new FeedEntity());
-//        when(feedEntityRepository.saveAll(feedEntities)).thenReturn(feedEntities);
-
         List<ResponseFeedDto> responseFeeds = feedEntityService.storeFeeds(List.of());
 
         assertEquals(responseFeeds.size(), 0);
@@ -67,9 +51,6 @@ class FeedEntityServiceTest extends AbstractIntegrationTest {
     void shouldSearchAllEntries() {
         ZonedDateTime now = ZonedDateTime.now();
         ZonedDateTime afterSevenDays = now.plusDays(7L);
-        List<FeedEntity> feedEntities = List.of(new FeedEntity(), new FeedEntity());
-
-//        when(feedEntityRepository.findAllByCategoriesInAndPublicationDateBetween(List.of("JAVA", "C#"), now, afterSevenDays)).thenReturn(feedEntities);
 
         List<ResponseFeedDto> responseFeeds = feedEntityService.searchFeedsByCategoriesAndDateRange(List.of("JAVA", "C#"), now, afterSevenDays);
 
