@@ -1,23 +1,28 @@
-CREATE TABLE IF NOT EXISTS FEED_ENTITY_CATEGORIES
-(
-    feed_entity_id bigserial constraint fk_feed_entity_id PRIMARY KEY,
-    categories VARCHAR(255) NOT NULL
+CREATE TABLE IF NOT EXISTS feed_configuration (
+                                    id bigserial not null,
+                                    domain varchar(255),
+                                    ingestion_enable boolean,
+                                    primary key (id)
 );
 
-CREATE TABLE IF NOT EXISTS FEED_ENTITY (
-    id bigserial constraint pk_feed_entity_id PRIMARY KEY,
-    title varchar(256) NOT NULL,
-    link varchar(256) NOT NULL,
-    description varchar(512) NOT NULL,
-    author varchar(100) NOT NULL,
-    publication_date TIMESTAMP NOT NULL,
-    thumbnails varchar(256) NOT NULL,
-    related_identifiers varchar(256) DEFAULT NULL
+CREATE TABLE IF NOT EXISTS feed_entity (
+                             id bigserial not null,
+                             author varchar(255),
+                             description varchar(512),
+                             link varchar(255),
+                             publication_date timestamp(6) with time zone,
+                             related_identifiers varchar(255),
+                             thumbnails varchar(255),
+                             title varchar(255),
+                             primary key (id)
 );
 
-CREATE TABLE IF NOT EXISTS  FEED_CONFIGURATION (
-    id bigserial constraint pk_feed_configuration_id  PRIMARY KEY,
-    domain varchar(100) NOT NULL,
-    ingestion_enable BOOLEAN NOT NULL
+CREATE TABLE IF NOT EXISTSfeed_entity_categories (
+                                    feed_entity_id bigint not null,
+                                    categories varchar(255)
 );
 
+ALTER TABLE IF EXISTS feed_entity_categories
+    add constraint fk_feed_entity_id
+    foreign key (feed_entity_id)
+    references feed_entity
