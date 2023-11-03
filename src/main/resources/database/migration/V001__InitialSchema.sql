@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS feed_entity (
                              primary key (id)
 );
 
-CREATE TABLE IF NOT EXISTSfeed_entity_categories (
+CREATE TABLE IF NOT EXISTS feed_entity_categories (
                                     feed_entity_id bigint not null,
                                     categories varchar(255)
 );
