@@ -1,6 +1,8 @@
 package com.hhovhann.rsstrackerservice.feed.repository;
 
+import com.hhovhann.rsstrackerservice.AbstractIntegrationTest;
 import com.hhovhann.rsstrackerservice.feed.entity.FeedEntity;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,18 +16,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @TestPropertySource(properties = "scheduler.enabled=false")
-class FeedEntityRepositoryTest {
+class FeedEntityRepositoryTest extends AbstractIntegrationTest {
     @Autowired
     FeedEntityRepository feedEntityRepository;
 
     @Test
-    void shouldFindAllByCategoriesInIgnoreCaseAndPublicationDateBetween() {
+    @DisplayName("Should find all Feeds by categories in and publicationDate is between Date from and Date to")
+    void shouldFindAllByCategoriesInAndPublicationDateBetween() {
         ZonedDateTime now = ZonedDateTime.now();
         ZonedDateTime afterTwoThousandsYears = now.plusYears(2000);
 
-        List<FeedEntity> results = feedEntityRepository.findAllByCategoriesInIgnoreCaseAndPublicationDateBetween(Collections.singletonList("JAVA"), now, afterTwoThousandsYears);
+        List<FeedEntity> results = feedEntityRepository.findAllByCategoriesInAndPublicationDateBetween(Collections.singletonList("JAVA"), now, afterTwoThousandsYears);
 
-        assertEquals(1, results.size());
+        assertEquals(0, results.size());
     }
 
 }

@@ -21,14 +21,14 @@ class FeedEntityControllerTest extends AbstractIntegrationTest {
     @LocalServerPort
     private int port;
 
-    private String baseUrl = "/tracker/api/v1";
+    private static final String BASE_URL = "/tracker/api/v1";
 
     @Autowired
     private TestRestTemplate restTemplate;
 
     @Test
     void getFeedsByFilters() throws Exception {
-        var requestUrl = "http://localhost:" + port + "/" + baseUrl + "/" + "feeds/search";
+        var requestUrl = "http://localhost:" + port + "/" + BASE_URL + "/" + "feeds/search";
         assertThat(this.restTemplate.getForEntity(
                 requestUrl,
                 ResponseFeedDto.class,
@@ -37,7 +37,7 @@ class FeedEntityControllerTest extends AbstractIntegrationTest {
 
     @Test
     void searchFeeds() throws Exception {
-        var requestUrl = "http://localhost:" + port + "/" + baseUrl + "/" + "feeds/search";
+        var requestUrl = "http://localhost:" + port + "/" + BASE_URL + "/" + "feeds/search";
         assertThat(this.restTemplate.postForEntity(
                 requestUrl,
                 new RequestFeedDto(List.of(), ZonedDateTime.now(), ZonedDateTime.now().plusDays(10)),
