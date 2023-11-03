@@ -8,8 +8,8 @@ CREATE TABLE IF NOT EXISTS FEED_ENTITY (
     id bigserial constraint pk_feed_entity_id PRIMARY KEY,
     title varchar(256) NOT NULL,
     link varchar(256) NOT NULL,
-    description varchar(500) NOT NULL,
-    author varchar(500) NOT NULL,
+    description varchar(512) NOT NULL,
+    author varchar(100) NOT NULL,
     publication_date TIMESTAMP NOT NULL,
     thumbnails varchar(256) NOT NULL,
     related_identifiers varchar(256) DEFAULT NULL

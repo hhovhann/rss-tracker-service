@@ -6,11 +6,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
@@ -26,7 +24,6 @@ public class FeedEntity {
     private Long id;
     String title;
     String link;
-    @Lob
     @Column(name = "description", length = 512)
     String description;
     ZonedDateTime publicationDate;

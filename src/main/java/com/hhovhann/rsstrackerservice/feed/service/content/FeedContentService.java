@@ -53,9 +53,9 @@ public class FeedContentService {
                     log.debug("Mapping current SyndEntry to FeedEntity:{}", entry);
 
                     FeedEntity feedEntity = feedEntityMapper.toEntity(entry);
-                    if (!feedEntityService.isFeedExist(feedEntity)) {
+//                    if (!feedEntityService.isFeedExist(feedEntity)) { // TODO fixme check against db existisnce if yes then only add to store after.
                         feedToStore.add(feedEntity);
-                    }
+//                    }
                 }
                 List<ResponseFeedDto> storedFeeds = feedEntityService.storeFeeds(feedToStore);
                 log.debug("Stored {} Feed(s) to local database", storedFeeds.size());

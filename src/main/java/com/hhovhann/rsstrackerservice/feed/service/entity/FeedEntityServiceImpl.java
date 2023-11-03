@@ -4,6 +4,7 @@ import com.hhovhann.rsstrackerservice.feed.dto.ResponseFeedDto;
 import com.hhovhann.rsstrackerservice.feed.entity.FeedEntity;
 import com.hhovhann.rsstrackerservice.feed.mapper.FeedEntityMapper;
 import com.hhovhann.rsstrackerservice.feed.repository.FeedEntityRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Example;
@@ -25,10 +26,11 @@ public class FeedEntityServiceImpl implements FeedEntityService {
     public boolean isFeedExist(FeedEntity feed) {
         log.debug("isFeedExist, feed: {}", feed);
 
-        return feedEntityRepository.exists(Example.of(feed));
+        return feedEntityRepository.exists(Example.of(feed, ExampleMatcher.matchingAll().withIgnorePaths("id", "categories")));
     }
 
     @Override
+    @Transactional
     public List<ResponseFeedDto> storeFeeds(List<FeedEntity> feeds) {
         log.debug("storeFeeds, feeds: {}", feeds);
 
