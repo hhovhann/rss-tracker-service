@@ -3,7 +3,7 @@ RSS/Atom feeds update tracker Rest API service project for Spring Boot
 
 ## Software Environment
 
-- Java 20 (soon will move to 21, not supporting by maven yet)
+- Java 17 (soon will move to 21, not supporting by maven yet)
 - Postgres database
 - Flyway migration
 - Spring Boot 3.1.5

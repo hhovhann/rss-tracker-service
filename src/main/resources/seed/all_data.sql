@@ -1,7 +1,12 @@
 -- Seed feed configuration table
-INSERT INTO feed_configuration (id, domain, ingestion_enable) VALUES (1, 'https://hypothes.is/stream.rss', false);
-INSERT INTO feed_configuration (id, domain, ingestion_enable) VALUES (2, 'https://feeds.bbci.co.uk/news/science_and_environment/rss.xml', false);
-INSERT INTO feed_configuration (id, domain, ingestion_enable) VALUES (3, 'https://www.feedotter.com/blog/category/best-practices/feed/', true);
+INSERT INTO feed_configuration (id, domain, ingestion_enable)
+VALUES (1, 'https://hypothes.is/stream.rss', false);
+
+INSERT INTO feed_configuration (id, domain, ingestion_enable)
+VALUES (2, 'https://feeds.bbci.co.uk/news/science_and_environment/rss.xml', false);
+
+INSERT INTO feed_configuration (id, domain, ingestion_enable)
+VALUES (3, 'https://www.feedotter.com/blog/category/best-practices/feed/', true);
 
 -- Seed feed configuration table
 INSERT INTO feed_entity (id, author, description, link, publication_date, related_identifiers, thumbnails, title)
@@ -12,17 +17,17 @@ VALUES (1,
         '2023-08-01 08:08:45.000000 +00:00',
         'https://www.feedotter.com/?p=27751',
         'entry.getSource().getIcon().getUrl()',
-        'New UI Walkthrough: Updates for a Better, Easy to Use Interface');
+        'Dangers of Not Emailing Your Blog Posts in 2023');
 
 INSERT INTO feed_entity (id, author, description, link, publication_date, related_identifiers, thumbnails, title)
 VALUES (2,
-    'Andy Theimer',
-    'Ever wondered what the Recipient Time Zone option below your Marketo scheduler was for? Anytime you&#8217;re sending marketing emails to your recipients, a big question can be the best time to send this email you&#8217;ve carefully curated. You can always find blog posts and research on the optimal time to send your emails for the [&#8230;]',
-    'https://www.feedotter.com/blog/recipient-time-zones-marketo-emails/?utm_source=rss&utm_medium=rss&utm_campaign=recipient-time-zones-marketo-emails',
-    '2023-02-23 19:40:56.000000 +00:00',
-    'https://www.feedotter.com/?p=27586',
-    'entry.getSource().getIcon().getUrl()',
-    'Easy steps for using recipient time zones in Marketo emails');
+        'Andy Theimer',
+        'Ever wondered what the Recipient Time Zone option below your Marketo scheduler was for? Anytime you&#8217;re sending marketing emails to your recipients, a big question can be the best time to send this email you&#8217;ve carefully curated. You can always find blog posts and research on the optimal time to send your emails for the [&#8230;]',
+        'https://www.feedotter.com/blog/recipient-time-zones-marketo-emails/?utm_source=rss&utm_medium=rss&utm_campaign=recipient-time-zones-marketo-emails',
+        '2023-02-23 19:40:56.000000 +00:00',
+        'https://www.feedotter.com/?p=27586',
+        'entry.getSource().getIcon().getUrl()',
+        'Easy steps for using recipient time zones in Marketo emails');
 
 INSERT INTO feed_entity (id, author, description, link, publication_date, related_identifiers, thumbnails, title)
 VALUES (3,
@@ -65,35 +70,61 @@ VALUES (6,
         '3 Easy Tips for Reducing Unsubscribes on Content Emails');
 
 -- Seed configuration table
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (1, 'best practices');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (1, 'marketing automation');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (1, 'best practices');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (1, 'marketing automation');
 
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (2, 'best practices');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (2, 'email marketing');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (2, 'Marketo');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (2, 'best practices');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (2, 'email marketing');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (2, 'Marketo');
 
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (3, 'B2B Resources');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (3, 'company blog');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (3, 'content marketing');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (3, 'Featured');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (3, 'B2B Resources');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (3, 'company blog');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (3, 'content marketing');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (3, 'Featured');
 
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (4, 'company blog');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (4, 'best practices');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (4, 'Product Features');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (4, 'company blog');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (4, 'best practices');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (4, 'Product Features');
 
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (5, 'pardot');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (5, 'B2B Resources');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (5, 'best practices');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (5, 'company blog');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (5, 'how to');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (5, 'Blog');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (5, 'digest');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (5, 'newletter');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (5, 'podcasts');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (5, 'RSS');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (5, 'RSS feed');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (5, 'pardot');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (5, 'B2B Resources');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (5, 'best practices');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (5, 'company blog');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (5, 'how to');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (5, 'Blog');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (5, 'digest');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (5, 'newletter');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (5, 'podcasts');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (5, 'RSS');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (5, 'RSS feed');
 
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (5, 'email marketing');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (5, 'B2B Resources');
-INSERT INTO feed_entity_categories(feed_entity_id, categories) VALUES (5, 'best practices');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (5, 'email marketing');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (5, 'B2B Resources');
+INSERT INTO feed_entity_categories(feed_entity_id, categories)
+VALUES (5, 'best practices');
 

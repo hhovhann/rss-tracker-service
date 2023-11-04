@@ -17,7 +17,7 @@ class FeedConfigurationServiceTest extends AbstractIntegrationTest {
     FeedConfigurationService feedConfigurationService;
 
     @Test
-    @DisplayName("Should Find all enabled feeds for scaning")
+    @DisplayName("Should Find all enabled feeds for scanning")
     void shouldFindAllEnabledFeedsToScan() {
         assertEquals(1, feedConfigurationService.getEnabledFeedConfigurations().size());
     }

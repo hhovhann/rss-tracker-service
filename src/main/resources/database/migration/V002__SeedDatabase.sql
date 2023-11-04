@@ -17,7 +17,7 @@ VALUES (1,
         '2023-08-01 08:08:45.000000 +00:00',
         'https://www.feedotter.com/?p=27751',
         'entry.getSource().getIcon().getUrl()',
-        'New UI Walkthrough: Updates for a Better, Easy to Use Interface');
+        'Dangers of Not Emailing Your Blog Posts in 2023');
 
 INSERT INTO feed_entity (id, author, description, link, publication_date, related_identifiers, thumbnails, title)
 VALUES (2,

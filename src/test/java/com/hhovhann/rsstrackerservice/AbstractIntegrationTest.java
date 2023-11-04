@@ -2,7 +2,6 @@ package com.hhovhann.rsstrackerservice;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.PostgreSQLContainer;
@@ -11,10 +10,8 @@ import org.testcontainers.utility.DockerImageName;
 
 @SpringBootTest(
         classes = RssTrackerServiceApplication.class,
-        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-        properties = {"spring.datasource.url=jdbc:tc:postgresql:9.6.8:///rss-tracker-test-db"}
+        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
-@ActiveProfiles("test")
 @Testcontainers(disabledWithoutDocker = true)
 public class AbstractIntegrationTest {
     public static final PostgreSQLContainer<?> POSTGRESQL_CONTAINER = new PostgreSQLContainer<>(DockerImageName.parse("postgres:14.5"))

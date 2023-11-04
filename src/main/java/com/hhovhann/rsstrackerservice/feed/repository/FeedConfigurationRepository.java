@@ -8,7 +8,10 @@ import java.util.List;
 
 @Repository
 public interface FeedConfigurationRepository extends JpaRepository<FeedConfiguration, Long> {
-
+    /**
+     * Search collection of enabled feeds by categories and date ranges
+     * @return collection of enabled feed configuration
+     */
     List<FeedConfiguration> findAllByIngestionEnableTrue();
 
 }

@@ -25,7 +25,7 @@ public class FeedEntity {
     private Long id;
     String title;
     String link;
-    @Column(name = "description", length = 512)
+    @Column(length = 512)
     String description;
     ZonedDateTime publicationDate;
     String author;
