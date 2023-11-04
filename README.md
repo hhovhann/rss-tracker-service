@@ -16,6 +16,7 @@ RSS/Atom feeds update tracker Rest API service project for Spring Boot
   - controller
   - dto
   - entity
+  - exception
   - mapper
   - repository
   - service
