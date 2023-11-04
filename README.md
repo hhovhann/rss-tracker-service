@@ -150,4 +150,4 @@ Please check the [Rss Tracker Service Design](design/rss-tracker-service-draft-d
 - Unit, Integration tests cleanup           DONE Added Stub for all layers (repository, service, controller)
 - Support: Run as a container               NOT IMPLEMENTED
 - Support: Flyway migration                 DONE
-- Performance test (Jmeter scenarios)       DONE Added [Jmeter Scenari](jmeter/Search Feeds By Categories And Data Ranges.jmx) and Rate Limiter support
+- Performance test (Jmeter scenarios)       DONE Added [Jmeter Scenario](jmeter/Search Feeds By Categories And Data Ranges.jmx) and Rate Limiter support

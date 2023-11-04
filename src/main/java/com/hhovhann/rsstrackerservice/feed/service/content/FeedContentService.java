@@ -33,7 +33,7 @@ public class FeedContentService {
     private final FeedConfigurationService feedConfigurationService;
     private final FeedEntityMapper feedEntityMapper;
 
-    @Scheduled(fixedDelay = 600000)
+    @Scheduled(cron = "0 0 1 * * *", zone = "Asia/Dubai")
     public void executeFeedContentReading() {
         log.debug("executeFeedContentReading");
 
