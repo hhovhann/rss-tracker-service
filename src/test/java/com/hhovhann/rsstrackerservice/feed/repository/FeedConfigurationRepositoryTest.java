@@ -25,7 +25,7 @@ class FeedConfigurationRepositoryTest extends AbstractIntegrationTest  {
     void shouldFindAllByCategoriesInIgnoreCaseAndPublicationDateBetween() {
         List<FeedConfiguration> feedConfigurations = feedConfigurationRepository.findAllByIngestionEnableTrue();
 
-        assertEquals(0, feedConfigurations.size());
+        assertEquals(1, feedConfigurations.size());
     }
 
 }

@@ -23,10 +23,21 @@ class FeedEntityRepositoryTest extends AbstractIntegrationTest {
     @Test
     @DisplayName("Should find all Feeds by categories in and publicationDate is between Date from and Date to")
     void shouldFindAllByCategoriesInAndPublicationDateBetween() {
-        ZonedDateTime now = ZonedDateTime.now();
-        ZonedDateTime afterTwoThousandsYears = now.plusYears(2000);
+        var dateFrom = ZonedDateTime.now().minusYears(23);
+        var dateTo = ZonedDateTime.now();
 
-        List<FeedEntity> results = feedEntityRepository.findAllByCategoriesInAndPublicationDateBetween(Collections.singletonList("JAVA"), now, afterTwoThousandsYears);
+        List<FeedEntity> results = feedEntityRepository.findAllByCategoriesInAndPublicationDateBetween(Collections.singletonList("best practices"), dateFrom, dateTo);
+
+        assertEquals(4, results.size());
+    }
+
+    @Test
+    @DisplayName("Should not find any Feeds by categories in and publicationDate is between Date from and Date to")
+    void shouldNotFindAnyByCategoriesInAndPublicationDateBetween() {
+        var dateFrom = ZonedDateTime.now().minusYears(23);
+        var dateTo = ZonedDateTime.now();
+
+        List<FeedEntity> results = feedEntityRepository.findAllByCategoriesInAndPublicationDateBetween(Collections.singletonList("worst practices"), dateFrom, dateTo);
 
         assertEquals(0, results.size());
     }
