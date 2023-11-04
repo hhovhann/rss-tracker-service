@@ -29,10 +29,11 @@ class FeedEntityControllerTest extends AbstractIntegrationTest {
     @Test
     void getFeedsByFilters() throws Exception {
         var requestUrl = "http://localhost:" + port + "/" + BASE_URL + "/" + "feeds/search";
-        assertThat(this.restTemplate.getForEntity(
+//        assertThat(this.restTemplate.getForEntity(
+        assertThat(this.restTemplate.getForObject(
                 requestUrl,
                 ResponseFeedDto.class,
-                Map.of("categories", List.of(), "dateFrom", ZonedDateTime.now(), "dateTo", ZonedDateTime.now().plusDays(10))));
+                Map.of("categories", List.of(), "dateFrom", ZonedDateTime.now(), "dateTo", ZonedDateTime.now().plusDays(10)))).asString().contains();
     }
 
     @Test
