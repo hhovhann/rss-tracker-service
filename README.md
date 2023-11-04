@@ -8,6 +8,7 @@ RSS/Atom feeds update tracker Rest API service project for Spring Boot
 - Flyway migration
 - Spring Boot 3.1.5
 - Maven 3.9.5
+- Jmeter
 - The Room Java Library 2.1.0
 
 ## Software Structure
@@ -148,4 +149,4 @@ Please check the [Rss Tracker Service Design](design/rss-tracker-service-draft-d
 - Unit, Integration tests cleanup           DONE Added Stub for all layers (repository, service, controller)
 - Support: Run as a container               NOT IMPLEMENTED
 - Support: Flyway migration                 DONE
-- Performance test (Jmeter scenarios)       DONE Added RateLimiter support
+- Performance test (Jmeter scenarios)       DONE Added [Jmeter Scenari](Jmeter/search-) with load of 100 and Added RateLimiter support
