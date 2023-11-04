@@ -31,7 +31,7 @@ public class FeedEntityMapper {
         feedEntity.setDescription(entry.getDescription().getValue());
         feedEntity.setPublicationDate(ZonedDateTime.ofInstant(entry.getPublishedDate().toInstant(), ZoneId.systemDefault()));
         feedEntity.setAuthor(entry.getAuthor());
-        feedEntity.setThumbnails("entry.getSource().getIcon().getUrl() + ");
+        feedEntity.setThumbnails("entry.getSource().getIcon().getUrl()");
         feedEntity.setCategories(entry.getCategories()
                 .stream()
                 .map(SyndCategory::getName)

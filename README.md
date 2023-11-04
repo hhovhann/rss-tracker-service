@@ -34,7 +34,7 @@ RESPONSE BODY:
         "description": "In today&#8217;s digital landscape, where content is abundant and attention spans are fleeting, promoting your blog posts effectively is more critical than ever. Neglecting email marketing as a means of distributing your blog content can have severe consequences. In this article, we&#8217;ll explore the dangers of overlooking email promotion in 2023, backed by data and [&#8230;]",
         "getPublicationDate": "2023-08-01T08:08:45Z",
         "author": "Andy Theimer",
-        "thumbnails": "entry.getSource().getIcon().getUrl() + ",
+        "thumbnails": "entry.getSource().getIcon().getUrl()",
         "categories": [
             "best practices",
             "marketing automation"
@@ -47,7 +47,7 @@ RESPONSE BODY:
         "description": "Ever wondered what the Recipient Time Zone option below your Marketo scheduler was for? Anytime you&#8217;re sending marketing emails to your recipients, a big question can be the best time to send this email you&#8217;ve carefully curated. You can always find blog posts and research on the optimal time to send your emails for the [&#8230;]",
         "getPublicationDate": "2023-02-23T19:40:56Z",
         "author": "Andy Theimer",
-        "thumbnails": "entry.getSource().getIcon().getUrl() + ",
+        "thumbnails": "entry.getSource().getIcon().getUrl()",
         "categories": [
             "best practices",
             "email marketing",
@@ -61,7 +61,7 @@ RESPONSE BODY:
         "description": "It&#8217;s 2023, should businesses send regular blog emails to their subscribers?  I wanted to know how marketers truly viewed the topic of emailing blog posts in the modern marketing era so I spent the past month interviewing more than 20 marketing experts to find out how they perceive emailing blog posts in the year 2023. [&#8230;]",
         "getPublicationDate": "2023-02-10T03:00:43Z",
         "author": "Andy Theimer",
-        "thumbnails": "entry.getSource().getIcon().getUrl() + ",
+        "thumbnails": "entry.getSource().getIcon().getUrl()",
         "categories": [
             "B2B Resources",
             "best practices",
@@ -77,7 +77,7 @@ RESPONSE BODY:
         "description": "FeedOtter has some exciting new UI changes to the Automated campaigns area. While sending is the same and your existing campaigns will continue to run according to their normal schedules, the Edit Campaign screen has been updated and rearranged for easier access to certain features and to optimize user flow. Let&#8217;s walk through what&#8217;s changing: 1. Templates [&#8230;]",
         "getPublicationDate": "2022-09-07T13:39:25Z",
         "author": "Andy Theimer",
-        "thumbnails": "entry.getSource().getIcon().getUrl() + ",
+        "thumbnails": "entry.getSource().getIcon().getUrl()",
         "categories": [
             "company blog",
             "best practices",
@@ -91,7 +91,7 @@ RESPONSE BODY:
         "description": "Here at FeedOtter, something that&#8217;s usually on our minds is how to streamline the process of creating routine, content emails and newsletters that you can easily push to your email sending platform. And what better way to automate content emails than adding an RSS feed into Pardot? Let&#8217;s look at the need for an RSS [&#8230;]",
         "getPublicationDate": "2022-05-06T17:43:49Z",
         "author": "Andy Theimer",
-        "thumbnails": "entry.getSource().getIcon().getUrl() + ",
+        "thumbnails": "entry.getSource().getIcon().getUrl()",
         "categories": [
             "pardot",
             "B2B Resources",
@@ -113,7 +113,7 @@ RESPONSE BODY:
         "description": "Working with email automation and customers sending website content to their subscribers, we see lots of questions about high unsubscribe rates and what our best tips for reducing unsubscribes on routine content emails are. Gaining lead subscribers is one thing, keeping them can be just as difficult for marketers.  Reducing Unsubscribes The first step to [&#8230;]",
         "getPublicationDate": "2022-02-07T17:34:51Z",
         "author": "Andy Theimer",
-        "thumbnails": "entry.getSource().getIcon().getUrl() + ",
+        "thumbnails": "entry.getSource().getIcon().getUrl()",
         "categories": [
             "email marketing",
             "B2B Resources",
@@ -143,7 +143,7 @@ RESPONSE BODY:
         "description": "In today&#8217;s digital landscape, where content is abundant and attention spans are fleeting, promoting your blog posts effectively is more critical than ever. Neglecting email marketing as a means of distributing your blog content can have severe consequences. In this article, we&#8217;ll explore the dangers of overlooking email promotion in 2023, backed by data and [&#8230;]",
         "getPublicationDate": "2023-08-01T08:08:45Z",
         "author": "Andy Theimer",
-        "thumbnails": "entry.getSource().getIcon().getUrl() + ",
+        "thumbnails": "entry.getSource().getIcon().getUrl()",
         "categories": [
             "best practices",
             "marketing automation"
@@ -156,7 +156,7 @@ RESPONSE BODY:
         "description": "Ever wondered what the Recipient Time Zone option below your Marketo scheduler was for? Anytime you&#8217;re sending marketing emails to your recipients, a big question can be the best time to send this email you&#8217;ve carefully curated. You can always find blog posts and research on the optimal time to send your emails for the [&#8230;]",
         "getPublicationDate": "2023-02-23T19:40:56Z",
         "author": "Andy Theimer",
-        "thumbnails": "entry.getSource().getIcon().getUrl() + ",
+        "thumbnails": "entry.getSource().getIcon().getUrl()",
         "categories": [
             "best practices",
             "email marketing",
@@ -170,7 +170,7 @@ RESPONSE BODY:
         "description": "It&#8217;s 2023, should businesses send regular blog emails to their subscribers?  I wanted to know how marketers truly viewed the topic of emailing blog posts in the modern marketing era so I spent the past month interviewing more than 20 marketing experts to find out how they perceive emailing blog posts in the year 2023. [&#8230;]",
         "getPublicationDate": "2023-02-10T03:00:43Z",
         "author": "Andy Theimer",
-        "thumbnails": "entry.getSource().getIcon().getUrl() + ",
+        "thumbnails": "entry.getSource().getIcon().getUrl()",
         "categories": [
             "B2B Resources",
             "best practices",
@@ -186,7 +186,7 @@ RESPONSE BODY:
         "description": "FeedOtter has some exciting new UI changes to the Automated campaigns area. While sending is the same and your existing campaigns will continue to run according to their normal schedules, the Edit Campaign screen has been updated and rearranged for easier access to certain features and to optimize user flow. Let&#8217;s walk through what&#8217;s changing: 1. Templates [&#8230;]",
         "getPublicationDate": "2022-09-07T13:39:25Z",
         "author": "Andy Theimer",
-        "thumbnails": "entry.getSource().getIcon().getUrl() + ",
+        "thumbnails": "entry.getSource().getIcon().getUrl()",
         "categories": [
             "company blog",
             "best practices",
@@ -200,7 +200,7 @@ RESPONSE BODY:
         "description": "Here at FeedOtter, something that&#8217;s usually on our minds is how to streamline the process of creating routine, content emails and newsletters that you can easily push to your email sending platform. And what better way to automate content emails than adding an RSS feed into Pardot? Let&#8217;s look at the need for an RSS [&#8230;]",
         "getPublicationDate": "2022-05-06T17:43:49Z",
         "author": "Andy Theimer",
-        "thumbnails": "entry.getSource().getIcon().getUrl() + ",
+        "thumbnails": "entry.getSource().getIcon().getUrl()",
         "categories": [
             "pardot",
             "B2B Resources",
@@ -222,7 +222,7 @@ RESPONSE BODY:
         "description": "Working with email automation and customers sending website content to their subscribers, we see lots of questions about high unsubscribe rates and what our best tips for reducing unsubscribes on routine content emails are. Gaining lead subscribers is one thing, keeping them can be just as difficult for marketers.  Reducing Unsubscribes The first step to [&#8230;]",
         "getPublicationDate": "2022-02-07T17:34:51Z",
         "author": "Andy Theimer",
-        "thumbnails": "entry.getSource().getIcon().getUrl() + ",
+        "thumbnails": "entry.getSource().getIcon().getUrl()",
         "categories": [
             "email marketing",
             "B2B Resources",
@@ -235,10 +235,13 @@ RESPONSE BODY:
 
 ## Software Setup and Run
 - Download and install [Docker Desktop](https://www.docker.com/products/docker-desktop/) if you not have it installed in your machine
-- Run local postgres ```docker run -p 5432:5432 -e POSTGRES_USER=api-user  -e POSTGRES_PASSWORD=api-password -e POSTGRES_DB=rss-trackerdev-db -d postgres:14.5```
+- Run local postgres ```docker run -p 5432:5432 -e POSTGRES_USER=api-user  -e POSTGRES_PASSWORD=api-password -e POSTGRES_DB=rss-tracker-dev-db -d postgres:14.5```
 - Run application with bach command from project root ./scripts/run.sh
 - Run the application from the IDEA itself
-- Run `create_feed_configuration_data.sql` to fill feed configuration table 
+- Run `create_feed_configuration_data.sql` to fill feed configuration table
+
+## Software testing
+- Run `seed_database.sql` to fill all the tables with data
 
 ## Software Design and Diagram
 Please check the [Rss Tracker Service Design](design/rss-tracker-service-draft-design-flow.drawio)
