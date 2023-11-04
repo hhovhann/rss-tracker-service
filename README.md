@@ -238,10 +238,10 @@ RESPONSE BODY:
 - Run local postgres ```docker run -p 5432:5432 -e POSTGRES_USER=api-user  -e POSTGRES_PASSWORD=api-password -e POSTGRES_DB=rss-tracker-dev-db -d postgres:14.5```
 - Run application with bach command from project root ./scripts/run.sh
 - Run the application from the IDEA itself
-- Run `create_feed_configuration_data.sql` to fill feed configuration table
 
-## Software testing
-- Run `seed_database.sql` to fill all the tables with data
+## Software testing with custom data initialization
+- Run `seed/feed_configuration_data.sql` to fill feed configuration table to see scheduler job process
+- NOTE: If you want to feed all database Run `seed/all_data.sql`
 
 ## Software Design and Diagram
 Please check the [Rss Tracker Service Design](design/rss-tracker-service-draft-design-flow.drawio)
@@ -251,9 +251,3 @@ Please check the [Rss Tracker Service Design](design/rss-tracker-service-draft-d
 - Support: Run as a container               NOT IMPLEMENTED
 - Support: Flyway migration                 DONE
 - Performance test (Jmeter scenarios)       DONE Added RateLimiter support
-
-## Questions:
-- Publication date ? zoned local check with date of publication ?
-- feed rrs web site or xml url expecting
-- update or insert if data already in Db how update track 
-- etc ....
