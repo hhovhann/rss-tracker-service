@@ -15,7 +15,6 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 @TestPropertySource(properties = "scheduler.enabled=false")
@@ -26,14 +25,31 @@ class FeedEntityServiceTest extends AbstractIntegrationTest {
 
     @Autowired
     FeedEntityRepository feedEntityRepository;
+    @Test
+    @DisplayName("Should Find Existing Feed")
+    void shouldFindExistingFeed() {
+        // given
+        var feed = new FeedEntity();
+        feed.setAuthor("Andy Theimer");
+        feed.setTitle("In today&#8217;s digital landscape, where content is abundant and attention spans are fleeting, promoting your blog posts effectively is more critical than ever. Neglecting email marketing as a means of distributing your blog content can have severe consequences. In this article, we&#8217;ll explore the dangers of overlooking email promotion in 2023, backed by data and [&#8230;]");
+        feed.setLink("https://www.feedotter.com/blog/dangers-of-not-emailing-blog-posts-in-2023/?utm_source=rss&utm_medium=rss&utm_campaign=dangers-of-not-emailing-blog-posts-in-2023");
+        // when
+        boolean feedExist = feedEntityService.isFeedExist(feed);
 
+        //then
+        assertFalse(feedExist);
+    }
     @Test
     @DisplayName("Should Not Find Existing Feed")
     void shouldNotFindExistingFeed() {
         // given
         var feed = new FeedEntity();
+        feed.setAuthor("Hello World");
+        feed.setTitle("Hello World Title");
+        feed.setLink("Hello World Link");
         // when
         boolean feedExist = feedEntityService.isFeedExist(feed);
+
         //then
         assertFalse(feedExist);
     }

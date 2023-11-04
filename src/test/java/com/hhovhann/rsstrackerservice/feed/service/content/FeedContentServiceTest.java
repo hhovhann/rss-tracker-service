@@ -1,30 +1,44 @@
 package com.hhovhann.rsstrackerservice.feed.service.content;
 
 import com.hhovhann.rsstrackerservice.AbstractIntegrationTest;
-import com.hhovhann.rsstrackerservice.feed.entity.FeedEntity;
-import com.hhovhann.rsstrackerservice.feed.service.entity.FeedEntityService;
+import com.hhovhann.rsstrackerservice.feed.entity.FeedConfiguration;
+import com.hhovhann.rsstrackerservice.feed.repository.FeedConfigurationRepository;
+import com.hhovhann.rsstrackerservice.feed.repository.FeedEntityRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
-import org.springframework.test.context.TestPropertySource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class FeedContentServiceTest extends AbstractIntegrationTest {
 
     @Autowired
     FeedContentService feedContentService;
+    @Autowired
+    FeedEntityRepository feedEntityRepository;
+    @Autowired
+    FeedConfigurationRepository feedConfigurationRepository;
 
+    @BeforeEach
+    void  setUp(){
+        // Clean all feed entities and configurations
+        feedEntityRepository.deleteAll();
+        feedConfigurationRepository.deleteAll();
+    }
     @Test
-    @DisplayName("should Process Feed Content Scanning")
+    @DisplayName("Should Process Feed Content Scanning And Store new Entity")
     void shouldProcessFeedContentScanning() {
+        // Add new feed configuration and trigger feed
+        var newFeedConfiguration = new FeedConfiguration();
+        newFeedConfiguration.setIngestionEnable(true);
+        newFeedConfiguration.setDomain("https://www.feedotter.com/blog/category/Marketo/feed/");
+        feedConfigurationRepository.save(newFeedConfiguration);
         // when
         feedContentService.executeFeedContentReading();
         //then
-        assertTrue(true);
+        assertEquals(1, feedConfigurationRepository.findAllByIngestionEnableTrue().size());
     }
 }
