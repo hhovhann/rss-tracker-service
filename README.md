@@ -244,7 +244,13 @@ RESPONSE BODY:
 Please check the [Rss Tracker Service Design](design/rss-tracker-service-draft-design-flow.drawio)
 
 ## Nice to have next releases
-- Unit, Integration tests cleanup, finalize IN PROGRESS
-- Support: Run as a container
+- Unit, Integration tests cleanup           DONE Added Stub for all layers (repository, service, controller)
+- Support: Run as a container               NOT IMPLEMENTED
 - Support: Flyway migration                 DONE
-- Performance test (Jmeter scenarios)
+- Performance test (Jmeter scenarios)       DONE Added RateLimiter support
+
+## Questions:
+- Publication date ? zoned local check with date of publication ?
+- feed rrs web site or xml url expecting
+- update or insert if data already in Db how update track 
+- etc ....
