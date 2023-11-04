@@ -16,7 +16,7 @@ import org.testcontainers.utility.DockerImageName;
 @ActiveProfiles("test")
 public class AbstractIntegrationTest {
     @Container
-    static final PostgreSQLContainer<?> POSTGRESQL_CONTAINER = new PostgreSQLContainer<>(DockerImageName.parse("postgres:14.5"))
+    public static final PostgreSQLContainer<?> POSTGRESQL_CONTAINER = new PostgreSQLContainer<>(DockerImageName.parse("postgres:14.5"))
             .withDatabaseName("rss-tracker-test-db");
 
     @DynamicPropertySource
