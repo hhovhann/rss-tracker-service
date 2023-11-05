@@ -16,7 +16,7 @@ services:
   app:
    container_name: app
    depends_on:
-      - postgres_db
+    - postgres_db
    build: .
    restart: on-failure
    env_file: ./.env
@@ -24,10 +24,6 @@ services:
     - ${SPRING_APP_LOCAL_PORT}:${SPRING_APP_DOCKER_PORT}
    environment:
      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_db:${POSTGRES_DOCKER_PORT}/rss-tracker-dev-db
-   volumes:
-    - .m2:/root/.m2
-   stdin_open: true
-   tty: true
 
 volumes:
   postgres-data:

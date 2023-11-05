@@ -159,9 +159,3 @@ RESPONSE BODY:
 
 ## Software Design and Diagram
 Please check the [Rss Tracker Service Design](design/rss-tracker-service-draft-design-flow.drawio)
-
-## Nice to have next releases
-- Unit, Integration tests cleanup           DONE Added Stub for all layers (repository, service, controller)
-- Support: Run as a container               DONE Added docker compose (postgres + flyway + app)
-- Support: Flyway migration                 DONE
-- Performance test (Jmeter scenarios)       DONE Added [Jmeter Scenario](jmeter/Search Feeds By Categories And Data Ranges.jmx) and Rate Limiter support
