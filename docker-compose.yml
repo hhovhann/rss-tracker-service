@@ -5,8 +5,10 @@ services:
     image: 'postgres:14.5-alpine'
     container_name: postgres_db
     restart: always
+#    ports:
+#      - ${POSTGRES_PORT}:${POSTGRES_PORT}
     ports:
-      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+      - ${POSTGRES_LOCAL_PORT}:${POSTGRES_DOCKER_PORT}
     environment:
       POSTGRES_DB: rss-tracker-dev-db
       POSTGRES_USER: ${POSTGRES_USER}
@@ -17,11 +19,7 @@ services:
     environment:
       - FLYWAY_USER=${POSTGRES_USER}
       - FLYWAY_PASSWORD=${POSTGRES_PASSWORD}
-      - FLYWAY_URL=jdbc:postgresql://postgres_db:${POSTGRES_PORT}/rss-tracker-dev-db
-#      - FLYWAY_SCHEMAS=flyway,${POSTGRES_SCHEMA}
-#      - FLYWAY_GROUP=true
-#    command: -url=jdbc:postgresql://postgres_db/ -schemas=$POSTGRES_DB -user=$POSTGRES_USER -password=$POSTGRES_PASSWORD -connectRetries=60 migrate
-
+      - FLYWAY_URL=jdbc:postgresql://postgres_db:${POSTGRES_DOCKER_PORT}/rss-tracker-dev-db
     command: migrate -user=$POSTGRES_USER -password=${POSTGRES_PASSWORD} -connectRetries=60
     volumes:
       - $PWD/sql_versions:/flyway/sql
@@ -35,9 +33,9 @@ services:
    restart: on-failure
    env_file: ./.env
    ports:
-    - ${SPRING_LOCAL_PORT}:${SPRING_DOCKER_PORT}
+    - ${SPRING_APP_LOCAL_PORT}:${SPRING_APP_DOCKER_PORT}
    environment:
-     SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_db:${POSTGRES_PORT}/rss-tracker-dev-db
+     SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_db:${POSTGRES_DOCKER_PORT}/rss-tracker-dev-db
    volumes:
     - .m2:/root/.m2
    stdin_open: true

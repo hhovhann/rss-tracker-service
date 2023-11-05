@@ -6,7 +6,7 @@ RUN mvn -f /usr/src/app/pom.xml clean package
 FROM jelastic/maven:3.9.5-correttojdk-17.0.9.8.1
 WORKDIR /usr/src/app
 
-RUN #mkdir -p /usr/src/app/.m2 && mkdir /usr/src/app/.m2/repository
+RUN mkdir -p /usr/src/app/.m2 && mkdir /usr/src/app/.m2/repository
 COPY --from=build /usr/src/app/target/rss-tracker-service-1.0.0-SNAPSHOT.jar .
 
 
