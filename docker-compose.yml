@@ -13,18 +13,6 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - postgres-data:/var/lib/postgresql/data
-  flyway:
-    image: flyway/flyway:latest
-    container_name: flyway_db
-    environment:
-      - FLYWAY_USER=${POSTGRES_USER}
-      - FLYWAY_PASSWORD=${POSTGRES_PASSWORD}
-      - FLYWAY_URL=jdbc:postgresql://postgres_db:${POSTGRES_DOCKER_PORT}/rss-tracker-dev-db
-    command: migrate -user=$POSTGRES_USER -password=${POSTGRES_PASSWORD} -connectRetries=60
-    volumes:
-      - $PWD/sql_versions:/flyway/sql
-    depends_on:
-        - postgres_db
   app:
    container_name: app
    depends_on:
