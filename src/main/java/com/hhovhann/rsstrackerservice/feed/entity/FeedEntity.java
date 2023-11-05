@@ -32,5 +32,6 @@ public class FeedEntity {
     String thumbnails;
     @ElementCollection(fetch = FetchType.EAGER)
     List<String> categories = new ArrayList<>();
-    String relatedIdentifiers;
+    @ElementCollection(fetch = FetchType.EAGER)
+    List<String> relatedIdentifiers = new ArrayList<>();
 }

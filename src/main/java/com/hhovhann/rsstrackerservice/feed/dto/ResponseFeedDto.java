@@ -10,6 +10,6 @@ public record ResponseFeedDto(String title,
                               String author,
                               String thumbnails,
                               List<String> categories,
-                              String relatedIdentifiers) {
+                              List<String> relatedIdentifiers) {
 
 }

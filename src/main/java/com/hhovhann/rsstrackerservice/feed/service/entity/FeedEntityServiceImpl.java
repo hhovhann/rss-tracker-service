@@ -30,7 +30,7 @@ public class FeedEntityServiceImpl implements FeedEntityService {
                 .exists(Example.of(feed,
                         ExampleMatcher
                                 .matchingAll()
-                                .withIgnorePaths("thumbnails", "title", "description", "author", "publicationDate", "relatedIdentifiers")));
+                                .withIgnorePaths("thumbnails", "title", "description", "author", "publicationDate", "categories", "relatedIdentifiers")));
     }
 
     @Override

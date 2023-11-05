@@ -15,6 +15,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 @TestPropertySource(properties = "scheduler.enabled=false")
@@ -36,8 +37,8 @@ class FeedEntityServiceTest extends AbstractIntegrationTest {
         // when
         boolean feedExist = feedEntityService.isFeedExist(feed);
 
-        //then
-        assertFalse(feedExist);
+        // then
+        assertTrue(feedExist);
     }
     @Test
     @DisplayName("Should Not Find Existing Feed")
@@ -59,7 +60,7 @@ class FeedEntityServiceTest extends AbstractIntegrationTest {
     void shouldStoreAllEntries() {
         List<ResponseFeedDto> responseFeeds = feedEntityService.storeFeeds(List.of());
 
-        assertEquals(responseFeeds.size(), 0);
+        assertEquals(0L, responseFeeds.size());
     }
 
     @Test
@@ -70,7 +71,7 @@ class FeedEntityServiceTest extends AbstractIntegrationTest {
 
         List<ResponseFeedDto> responseFeeds = feedEntityService.searchFeedsByCategoriesAndDateRange(List.of("JAVA", "C#"), now, afterSevenDays);
 
-        assertEquals(responseFeeds.size(), 0);
+        assertEquals(0L, responseFeeds.size());
     }
 
 }

@@ -25,7 +25,18 @@ CREATE TABLE IF NOT EXISTS feed_entity_categories
     categories     varchar(255)
 );
 
+CREATE TABLE IF NOT EXISTS feed_entity_related_identifiers
+(
+    feed_entity_id     bigint not null,
+    related_identifiers varchar(255)
+);
+
 ALTER TABLE IF EXISTS feed_entity_categories
-    add constraint fk_feed_entity_id
+    add constraint fk_feed_entity_categories_id
+        foreign key (feed_entity_id)
+            references feed_entity;
+
+ALTER TABLE IF EXISTS feed_entity_related_identifiers
+    add constraint fk_feed_entity_related_identifiers_id
         foreign key (feed_entity_id)
             references feed_entity
