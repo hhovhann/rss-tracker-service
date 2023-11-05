@@ -134,7 +134,16 @@ RESPONSE BODY:
 ```
 
 ## Software Setup and Run:  Docker containers
-- Add .env and specify variables
+- Create  .env file from the root project with the varibles
+  ```
+    POSTGRES_DB=rss-tracker-dev-db
+    POSTGRES_USER=api-user
+    POSTGRES_PASSWORD=api-password
+    POSTGRES_LOCAL_PORT=15432
+    POSTGRES_DOCKER_PORT=5432
+    SPRING_APP_LOCAL_PORT=8888
+    SPRING_APP_DOCKER_PORT=8080
+  ```
 - From root directory start containers with `docker-compose up`
 - To stop the containers run `docker compose down`
 
