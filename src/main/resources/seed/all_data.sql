@@ -8,7 +8,10 @@ VALUES (2, 'https://feeds.bbci.co.uk/news/science_and_environment/rss.xml', fals
 INSERT INTO feed_configuration (id, domain, ingestion_enable)
 VALUES (3, 'https://www.feedotter.com/blog/category/best-practices/feed/', true);
 
--- Seed feed configuration table
+INSERT INTO feed_configuration (id, domain, ingestion_enable)
+VALUES (4, 'https://feeds.bbci.co.uk/news/rss.xml', false);
+
+-- Seed feed entity table
 INSERT INTO feed_entity (id, author, description, link, publication_date, related_identifiers, thumbnails, title)
 VALUES (1,
         'Andy Theimer',
@@ -69,7 +72,7 @@ VALUES (6,
         'entry.getSource().getIcon().getUrl()',
         '3 Easy Tips for Reducing Unsubscribes on Content Emails');
 
--- Seed configuration table
+-- Seed Feed Entity Categories table
 INSERT INTO feed_entity_categories(feed_entity_id, categories)
 VALUES (1, 'best practices');
 INSERT INTO feed_entity_categories(feed_entity_id, categories)
