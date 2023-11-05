@@ -24,6 +24,7 @@ services:
     - ${SPRING_APP_LOCAL_PORT}:${SPRING_APP_DOCKER_PORT}
    environment:
      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_db:${POSTGRES_DOCKER_PORT}/rss-tracker-dev-db
+     SPRING_PROFILES_ACTIVE: prod
 
 volumes:
   postgres-data:
