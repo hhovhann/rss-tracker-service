@@ -17,6 +17,6 @@ public interface FeedEntityRepository extends JpaRepository<FeedEntity, Long> {
      * @param dateTo end date
      * @return collection of feed entity matching query conditions, otherwise empty collections
      */
-    List<FeedEntity> findAllByCategoriesInAndPublicationDateBetween(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo);
+    List<FeedEntity> findByCategoriesInAndPublicationDateBetween(List<String> categories, ZonedDateTime dateFrom, ZonedDateTime dateTo);
 
 }

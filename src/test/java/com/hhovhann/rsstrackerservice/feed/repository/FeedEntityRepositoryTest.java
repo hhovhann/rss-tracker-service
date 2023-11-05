@@ -26,7 +26,7 @@ class FeedEntityRepositoryTest extends AbstractIntegrationTest {
         var dateFrom = ZonedDateTime.now().minusYears(23);
         var dateTo = ZonedDateTime.now();
 
-        List<FeedEntity> results = feedEntityRepository.findAllByCategoriesInAndPublicationDateBetween(Collections.singletonList("best practices"), dateFrom, dateTo);
+        List<FeedEntity> results = feedEntityRepository.findByCategoriesInAndPublicationDateBetween(Collections.singletonList("best practices"), dateFrom, dateTo);
 
         assertEquals(4, results.size());
     }
@@ -37,7 +37,7 @@ class FeedEntityRepositoryTest extends AbstractIntegrationTest {
         var dateFrom = ZonedDateTime.now().minusYears(23);
         var dateTo = ZonedDateTime.now();
 
-        List<FeedEntity> results = feedEntityRepository.findAllByCategoriesInAndPublicationDateBetween(Collections.singletonList("worst practices"), dateFrom, dateTo);
+        List<FeedEntity> results = feedEntityRepository.findByCategoriesInAndPublicationDateBetween(Collections.singletonList("worst practices"), dateFrom, dateTo);
 
         assertEquals(0, results.size());
     }

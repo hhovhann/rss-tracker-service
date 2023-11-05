@@ -134,7 +134,7 @@ RESPONSE BODY:
 ```
 
 ## Software Setup and Run:  Docker containers
-- Create  .env file from the root project with the varibles
+- Create .env file from the root project with
   ```
     POSTGRES_DB=rss-tracker-dev-db
     POSTGRES_USER=api-user
