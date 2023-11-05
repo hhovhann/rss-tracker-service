@@ -133,7 +133,12 @@ RESPONSE BODY:
 ]
 ```
 
-## Software Setup and Run
+## Software Setup and Run:  Docker containers
+- Add .env and specify variables
+- From root directory start containers with `docker-compose up`
+- To stop the containers run `docker compose down`
+
+## Software Setup and Run: Local Application
 - Download and install [Docker Desktop](https://www.docker.com/products/docker-desktop/) if you not have it installed in your machine
 - Run local postgres ```docker run -p 5432:5432 -e POSTGRES_USER=api-user  -e POSTGRES_PASSWORD=api-password -e POSTGRES_DB=rss-tracker-dev-db -d postgres:14.5```
 - Run application with bach command from project root ./scripts/run.sh
@@ -148,6 +153,6 @@ Please check the [Rss Tracker Service Design](design/rss-tracker-service-draft-d
 
 ## Nice to have next releases
 - Unit, Integration tests cleanup           DONE Added Stub for all layers (repository, service, controller)
-- Support: Run as a container               NOT IMPLEMENTED
+- Support: Run as a container               DONE Added docker compose (postgres + flyway + app)
 - Support: Flyway migration                 DONE
 - Performance test (Jmeter scenarios)       DONE Added [Jmeter Scenario](jmeter/Search Feeds By Categories And Data Ranges.jmx) and Rate Limiter support
