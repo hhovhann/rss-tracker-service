@@ -26,9 +26,11 @@ public class FeedEntityServiceImpl implements FeedEntityService {
     public boolean isFeedExist(FeedEntity feed) {
         log.debug("isFeedExist, feed: {}", feed);
 
-        return feedEntityRepository.exists(Example.of(feed, ExampleMatcher
-                .matchingAll()
-                .withIgnorePaths("thumbnails", "publicationDate")));
+        return feedEntityRepository
+                .exists(Example.of(feed,
+                        ExampleMatcher
+                                .matchingAll()
+                                .withIgnorePaths("thumbnails", "title", "description", "author", "publicationDate", "relatedIdentifiers")));
     }
 
     @Override

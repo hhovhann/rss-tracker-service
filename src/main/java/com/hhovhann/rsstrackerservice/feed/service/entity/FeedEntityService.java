@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface FeedEntityService {
     /***
-     * Checks is the feed exists in database: criteria query with Feed Entity fields (Included: link, publication_date, thumbnails, title, related_identifiers, author, description, Excluded: categories, id)
+     * Checks is the feed exists in database: criteria query with Feed Entity fields: Link.
      * @param feed the current feed instance
      * @return true if the provided feed exists, otherwise false
      */
