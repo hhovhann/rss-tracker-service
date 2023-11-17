@@ -11,6 +11,8 @@ import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
+import io.github.pixee.security.HostValidator;
+import io.github.pixee.security.Urls;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -46,7 +48,7 @@ public class FeedContentService {
 
     private void processFeedTransformation(FeedConfiguration currentFeedConfiguration) {
         try {
-            try (XmlReader reader = new XmlReader(new URL(currentFeedConfiguration.getDomain()))) {
+            try (XmlReader reader = new XmlReader(Urls.create(currentFeedConfiguration.getDomain(), Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS))) {
                 SyndFeed feed = new SyndFeedInput().build(reader);
                 var feedToStore = new ArrayList<FeedEntity>();
                 for (SyndEntry entry : feed.getEntries()) {
