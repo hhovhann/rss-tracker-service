@@ -14,7 +14,7 @@
     <name>rss-tracker-service</name>
     <description>RSS/Atom feeds update tracker Rest API service project for Spring Boot</description>
     <properties>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
         <spring-cloud.version>2022.0.4</spring-cloud.version>
     </properties>
     <dependencies>

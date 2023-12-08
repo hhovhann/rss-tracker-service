@@ -1,4 +1,4 @@
-FROM jelastic/maven:3.9.5-correttojdk-17.0.9.8.1 AS build
+FROM jelastic/maven:3.9.5-correttojdk-21.0.1.12.1 AS build
 COPY src /usr/src/app/src
 COPY pom.xml /usr/src/app
 RUN mvn -f /usr/src/app/pom.xml clean package

@@ -11,6 +11,10 @@ VALUES (3, 'https://www.feedotter.com/blog/category/best-practices/feed/', true)
 INSERT INTO feed_configuration (id, domain, ingestion_enable)
 VALUES (4, 'https://feeds.bbci.co.uk/news/rss.xml', false);
 
+INSERT INTO feed_configuration (id, domain, ingestion_enable)
+VALUES (5, 'https://www.upwork.com/ab/feed/jobs/rss', false);
+
+
 -- Seed feed configuration table
 INSERT INTO feed_entity (id, author, description, link, publication_date, related_identifiers, thumbnails, title)
 VALUES (1,
